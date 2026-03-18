@@ -487,29 +487,26 @@ document.addEventListener('DOMContentLoaded', () => {
             var subject = contactForm.querySelector('[name="subject"]').value;
             var message = contactForm.querySelector('[name="message"]').value.trim();
 
-            // Use Formspree if configured, otherwise mailto fallback
-            var FORMSPREE_ID = contactForm.getAttribute('data-formspree');
+            // Google Apps Script endpoint
+            var GAS_URL = 'https://script.google.com/macros/s/AKfycbwZyaxQczP98rRNHhl0seDYAHKBPnDoa_Sn8k0ggq0x4ZzQnd0h_FhCv8TME2J-kXdr/exec';
 
-            if (FORMSPREE_ID) {
-                // Formspree submission
-                fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+            if (GAS_URL) {
+                // Google Apps Script submission (no-cors to avoid CORS/redirect issues)
+                fetch(GAS_URL, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'text/plain' },
                     body: JSON.stringify({
                         name: name,
                         email: email,
                         subject: subject,
                         message: message
                     })
-                }).then(function(response) {
-                    if (response.ok) {
-                        statusEl.className = 'form-status success';
-                        statusEl.textContent = translations[lang].contact_form_success;
-                        contactForm.reset();
-                    } else {
-                        statusEl.className = 'form-status error';
-                        statusEl.innerHTML = translations[lang].contact_form_error;
-                    }
+                }).then(function() {
+                    // With no-cors, response is opaque but data was sent
+                    statusEl.className = 'form-status success';
+                    statusEl.textContent = translations[lang].contact_form_success;
+                    contactForm.reset();
                 }).catch(function() {
                     statusEl.className = 'form-status error';
                     statusEl.innerHTML = translations[lang].contact_form_error;
