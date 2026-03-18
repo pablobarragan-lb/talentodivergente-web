@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Translations Data
     const translations = {
         es: {
-            head_title: "Talento Divergente | Inclusión Efectiva",
+            head_title: "Talento Divergente | Inclusión Laboral Neurodivergente",
             nav_start: "Inicio",
             nav_services: "Servicios",
             nav_about: "Nosotros",
@@ -50,24 +50,23 @@ document.addEventListener('DOMContentLoaded', () => {
             dual_company_title: "Para Empresas",
             dual_company_desc: "La neurodiversidad aporta enfoque, atención al detalle e innovación. Potencia tu equipo con talento divergente.",
             dual_company_btn: "Contratar Talento",
-            contact_title: "Únete a Nosotros",
-            contact_desc: "Tanto si buscas empleo como si quieres incorporar talento neurodivergente a tu empresa, estamos aquí para ayudarte. Escríbenos y te responderemos lo antes posible.",
-            contact_talent_title: "Soy Talento",
-            contact_talent_desc: "Quiero encontrar un empleo donde mi forma de pensar sea una ventaja.",
-            contact_talent_cta: "Escríbenos",
-            contact_company_title: "Soy Empresa",
-            contact_company_desc: "Quiero incorporar talento neurodivergente a mi equipo.",
-            contact_company_cta: "Contáctanos",
-            contact_collab_title: "Quiero Colaborar",
-            contact_collab_desc: "Quiero sumarme como voluntario, aliado o patrocinador.",
-            contact_collab_cta: "Hablemos",
+            contact_title: "Contacto",
+            contact_subtitle: "¿Tienes preguntas o quieres colaborar? Estamos aquí para ayudarte.",
+            contact_email_title: "Email",
+            contact_location_title: "Ubicación",
+            contact_location_desc: "Moncofa, Castellón<br>Comunitat Valenciana, España",
+            contact_linkedin_desc: "Síguenos en LinkedIn para estar al día de nuestras novedades y oportunidades.",
             footer_desc: "Construyendo puentes entre el talento neurodivergente y empresas preparadas para el futuro.",
             footer_links_title: "Enlaces",
+            footer_legal_title: "Información",
+            footer_about_us: "Quiénes Somos",
+            footer_legal_notice: "Aviso Legal",
+            footer_privacy_policy: "Política de Privacidad",
             footer_contact_title: "Contacto",
             footer_copy: "&copy; 2026 Fundación Talento Divergente. Todos los derechos reservados."
         },
         en: {
-            head_title: "Talento Divergente | Effective Inclusion",
+            head_title: "Talento Divergente | Neurodivergent Employment Inclusion",
             nav_start: "Home",
             nav_services: "Services",
             nav_about: "About Us",
@@ -115,19 +114,18 @@ document.addEventListener('DOMContentLoaded', () => {
             dual_company_title: "For Companies",
             dual_company_desc: "Neurodiversity brings focus, attention to detail, and innovation. Power up your team with divergent talent.",
             dual_company_btn: "Hire Talent",
-            contact_title: "Join Us",
-            contact_desc: "Whether you're looking for a job or want to bring neurodivergent talent to your company, we're here to help. Write to us and we'll get back to you as soon as possible.",
-            contact_talent_title: "I'm Talent",
-            contact_talent_desc: "I want to find a job where my way of thinking is an advantage.",
-            contact_talent_cta: "Write to us",
-            contact_company_title: "I'm a Company",
-            contact_company_desc: "I want to bring neurodivergent talent to my team.",
-            contact_company_cta: "Contact us",
-            contact_collab_title: "I Want to Collaborate",
-            contact_collab_desc: "I want to join as a volunteer, ally, or sponsor.",
-            contact_collab_cta: "Let's talk",
+            contact_title: "Contact",
+            contact_subtitle: "Have questions or want to collaborate? We are here to help.",
+            contact_email_title: "Email",
+            contact_location_title: "Location",
+            contact_location_desc: "Moncofa, Castellón<br>Comunitat Valenciana, Spain",
+            contact_linkedin_desc: "Follow us on LinkedIn to stay up to date with our news and opportunities.",
             footer_desc: "Building bridges between neurodivergent talent and companies prepared for the future.",
             footer_links_title: "Links",
+            footer_legal_title: "Information",
+            footer_about_us: "About Us",
+            footer_legal_notice: "Legal Notice",
+            footer_privacy_policy: "Privacy Policy",
             footer_contact_title: "Contact",
             footer_copy: "&copy; 2026 Talento Divergente Foundation. All rights reserved."
         }
@@ -182,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar Scroll Effect
     const navbar = document.getElementById('navbar');
-    
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
@@ -207,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    const cards = document.querySelectorAll('.service-card, .glass-card, .split-content, .contact-card');
+    const cards = document.querySelectorAll('.service-card, .glass-card, .split-content');
     cards.forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
