@@ -491,29 +491,53 @@ document.addEventListener('DOMContentLoaded', () => {
             var GAS_URL = 'https://script.google.com/macros/s/AKfycbwZyaxQczP98rRNHhl0seDYAHKBPnDoa_Sn8k0ggq0x4ZzQnd0h_FhCv8TME2J-kXdr/exec';
 
             if (GAS_URL) {
-                // Google Apps Script submission (no-cors to avoid CORS/redirect issues)
-                fetch(GAS_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'text/plain' },
-                    body: JSON.stringify({
-                        name: name,
-                        email: email,
-                        subject: subject,
-                        message: message
-                    })
-                }).then(function() {
-                    // With no-cors, response is opaque but data was sent
+                // Google Apps Script submission via hidden iframe to handle redirects
+                var payload = JSON.stringify({
+                    name: name,
+                    email: email,
+                    subject: subject,
+                    message: message
+                });
+
+                // Create a hidden form that posts to GAS (avoids CORS entirely)
+                var hiddenForm = document.createElement('form');
+                hiddenForm.method = 'POST';
+                hiddenForm.action = GAS_URL;
+                hiddenForm.target = 'gas-iframe';
+                hiddenForm.style.display = 'none';
+
+                // Add data as hidden fields
+                var fields = {name: name, email: email, subject: subject, message: message};
+                for (var key in fields) {
+                    var input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = key;
+                    input.value = fields[key];
+                    hiddenForm.appendChild(input);
+                }
+
+                // Create hidden iframe to receive the response
+                var iframe = document.getElementById('gas-iframe');
+                if (!iframe) {
+                    iframe = document.createElement('iframe');
+                    iframe.name = 'gas-iframe';
+                    iframe.id = 'gas-iframe';
+                    iframe.style.display = 'none';
+                    document.body.appendChild(iframe);
+                }
+
+                document.body.appendChild(hiddenForm);
+                hiddenForm.submit();
+                document.body.removeChild(hiddenForm);
+
+                // Show success (we can't read iframe response due to cross-origin)
+                setTimeout(function() {
                     statusEl.className = 'form-status success';
                     statusEl.textContent = translations[lang].contact_form_success;
                     contactForm.reset();
-                }).catch(function() {
-                    statusEl.className = 'form-status error';
-                    statusEl.innerHTML = translations[lang].contact_form_error;
-                }).finally(function() {
                     submitBtn.disabled = false;
                     submitBtn.textContent = translations[lang].contact_form_submit;
-                });
+                }, 1500);
             } else {
                 // Mailto fallback
                 var mailSubject = encodeURIComponent(subject + ' - ' + name);
