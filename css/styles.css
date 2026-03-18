@@ -773,6 +773,79 @@ span.highlight {
     max-width: 480px;
 }
 
+/* ==================================
+   CONTACT SECTION
+   ================================== */
+.contact-section {
+    background: linear-gradient(135deg, var(--clr-light-100) 0%, var(--clr-light-300) 100%);
+}
+
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.contact-card {
+    background: var(--clr-white);
+    border: 1px solid var(--clr-light-200);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+}
+
+.contact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--clr-ocean-300);
+}
+
+.contact-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--clr-anthracite-800);
+}
+
+.contact-card-desc {
+    font-size: 0.9375rem;
+    color: var(--clr-text-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.contact-card-cta {
+    font-family: var(--ff-primary);
+    font-weight: 600;
+    color: var(--clr-ocean-500);
+    border-bottom: 2px solid transparent;
+    transition: border-color var(--transition-normal);
+}
+
+.contact-card:hover .contact-card-cta {
+    border-bottom-color: var(--clr-ocean-500);
+}
+
+.contact-email {
+    font-size: 1.125rem;
+    color: var(--clr-ocean-700);
+    font-weight: 600;
+    font-family: var(--ff-primary);
+}
+
+/* ==================================
+   FOOTER
+   ================================== */
 .footer {
     background-color: var(--clr-anthracite-900);
     color: var(--clr-light-300);
@@ -853,6 +926,9 @@ span.highlight {
     font-size: 0.875rem;
 }
 
+/* ==================================
+   RESPONSIVE DESIGN
+   ================================== */
 @media (max-width: 1024px) {
     .hero-container {
         gap: 2rem;
@@ -935,6 +1011,10 @@ span.highlight {
     }
     
     .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-cards {
         grid-template-columns: 1fr;
     }
     

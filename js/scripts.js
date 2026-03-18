@@ -50,6 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
             dual_company_title: "Para Empresas",
             dual_company_desc: "La neurodiversidad aporta enfoque, atención al detalle e innovación. Potencia tu equipo con talento divergente.",
             dual_company_btn: "Contratar Talento",
+            contact_title: "Únete a Nosotros",
+            contact_desc: "Tanto si buscas empleo como si quieres incorporar talento neurodivergente a tu empresa, estamos aquí para ayudarte. Escríbenos y te responderemos lo antes posible.",
+            contact_talent_title: "Soy Talento",
+            contact_talent_desc: "Quiero encontrar un empleo donde mi forma de pensar sea una ventaja.",
+            contact_talent_cta: "Escríbenos",
+            contact_company_title: "Soy Empresa",
+            contact_company_desc: "Quiero incorporar talento neurodivergente a mi equipo.",
+            contact_company_cta: "Contáctanos",
+            contact_collab_title: "Quiero Colaborar",
+            contact_collab_desc: "Quiero sumarme como voluntario, aliado o patrocinador.",
+            contact_collab_cta: "Hablemos",
             footer_desc: "Construyendo puentes entre el talento neurodivergente y empresas preparadas para el futuro.",
             footer_links_title: "Enlaces",
             footer_contact_title: "Contacto",
@@ -104,6 +115,17 @@ document.addEventListener('DOMContentLoaded', () => {
             dual_company_title: "For Companies",
             dual_company_desc: "Neurodiversity brings focus, attention to detail, and innovation. Power up your team with divergent talent.",
             dual_company_btn: "Hire Talent",
+            contact_title: "Join Us",
+            contact_desc: "Whether you're looking for a job or want to bring neurodivergent talent to your company, we're here to help. Write to us and we'll get back to you as soon as possible.",
+            contact_talent_title: "I'm Talent",
+            contact_talent_desc: "I want to find a job where my way of thinking is an advantage.",
+            contact_talent_cta: "Write to us",
+            contact_company_title: "I'm a Company",
+            contact_company_desc: "I want to bring neurodivergent talent to my team.",
+            contact_company_cta: "Contact us",
+            contact_collab_title: "I Want to Collaborate",
+            contact_collab_desc: "I want to join as a volunteer, ally, or sponsor.",
+            contact_collab_cta: "Let's talk",
             footer_desc: "Building bridges between neurodivergent talent and companies prepared for the future.",
             footer_links_title: "Links",
             footer_contact_title: "Contact",
@@ -185,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    const cards = document.querySelectorAll('.service-card, .glass-card, .split-content');
+    const cards = document.querySelectorAll('.service-card, .glass-card, .split-content, .contact-card');
     cards.forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
