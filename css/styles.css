@@ -716,7 +716,7 @@ span.highlight {
 }
 
 .service-features li::before {
-    content: "\2713";
+    content: "✓";
     color: var(--clr-ocean-500);
     font-weight: bold;
 }
@@ -1015,9 +1015,9 @@ span.highlight {
 
 /* Page Hero - shorter than main hero */
 .page-hero {
-    background: linear-gradient(135deg, var(--clr-anthracite-900) 0%, var(--clr-ocean-900) 100%);
+    background: linear-gradient(135deg, var(--clr-light-100) 0%, var(--clr-light-300) 100%);
     padding: 8rem 0 3rem;
-    color: var(--clr-white);
+    color: var(--clr-anthracite-900);
     text-align: center;
 }
 
@@ -1026,15 +1026,16 @@ span.highlight {
     font-size: 2.75rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+    color: var(--clr-anthracite-900);
 }
 
 .page-hero .breadcrumbs {
-    color: rgba(255,255,255,0.6);
+    color: var(--clr-text-muted);
     font-size: 0.875rem;
 }
 
 .page-hero .breadcrumbs a {
-    color: var(--clr-ocean-300);
+    color: var(--clr-ocean-500);
     text-decoration: none;
 }
 
