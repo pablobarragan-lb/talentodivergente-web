@@ -29,6 +29,59 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Neurodiversidad | Talento Divergente">
     <meta name="twitter:description" content="Qué es la neurodiversidad, qué tipos existen y por qué es una ventaja competitiva en el entorno laboral.">
+    <meta name="twitter:image" content="https://fundaciontalentodivergente.org/assets/logo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "¿Las personas neurodivergentes necesitan adaptaciones especiales en el trabajo?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No siempre. Muchas veces se trata de ajustes sencillos y de bajo coste: reducir estímulos sensoriales innecesarios, ofrecer instrucciones claras por escrito, permitir auriculares con cancelación de ruido o flexibilizar horarios."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Contratar talento neurodivergente es solo una cuestión de RSC?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Es una decisión empresarial basada en datos. Empresas como SAP, Microsoft y JP Morgan han demostrado que los equipos neurodiversos son más productivos e innovadores."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Cómo afecta la neurodiversidad a la dinámica de equipo?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Un equipo cognitivamente diverso analiza los problemas desde múltiples perspectivas, lo que reduce el pensamiento grupal y mejora la toma de decisiones."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Qué obligaciones legales tienen las empresas respecto a la neurodiversidad?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "En España, la Ley General de Discapacidad (LGD) establece una cuota del 2% para empresas de más de 50 trabajadores. Además, la ISO 45003 regula los riesgos psicosociales."
+                }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://fundaciontalentodivergente.org/"},
+            {"@type": "ListItem", "position": 2, "name": "Neurodiversidad", "item": "https://fundaciontalentodivergente.org/neurodiversidad.html"}
+        ]
+    }
+    </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -94,7 +147,7 @@
                     Cada tipo de neurodivergencia tiene características propias y fortalezas específicas que, bien gestionadas, se traducen en ventajas competitivas reales.
                 </p>
 
-                <div class="stats-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="stats-grid stats-grid-2col">
                     <div class="stat-card">
                         <div class="stat-icon">🧩</div>
                         <h3>Autismo (TEA)</h3>
@@ -130,7 +183,7 @@
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-icon">
-                            <span style="font-size: 1.5rem;">🧩</span>
+                            <span class="emoji-icon">🧩</span>
                         </div>
                         <h3 class="service-title">Autismo</h3>
                         <ul class="service-features">
@@ -143,7 +196,7 @@
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
-                            <span style="font-size: 1.5rem;">⚡</span>
+                            <span class="emoji-icon">⚡</span>
                         </div>
                         <h3 class="service-title">TDAH</h3>
                         <ul class="service-features">
@@ -156,7 +209,7 @@
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
-                            <span style="font-size: 1.5rem;">💡</span>
+                            <span class="emoji-icon">💡</span>
                         </div>
                         <h3 class="service-title">Altas Capacidades</h3>
                         <ul class="service-features">
@@ -249,12 +302,6 @@
 
     <!-- Script -->
     <script src="js/scripts.js"></script>
-    <script>
-        document.querySelectorAll('.faq-question').forEach(btn => {
-            btn.addEventListener('click', () => {
-                btn.parentElement.classList.toggle('active');
-            });
-        });
-    </script>
+    <script src="js/faq.js"></script>
 </body>
 </html>

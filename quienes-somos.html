@@ -29,6 +29,34 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Quiénes Somos | Talento Divergente">
     <meta name="twitter:description" content="Conoce la misión, valores y equipo de la Fundación Talento Divergente.">
+    <meta name="twitter:image" content="https://fundaciontalentodivergente.org/assets/logo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "mainEntity": {
+            "@type": "NonprofitOrganization",
+            "name": "Fundación de la Comunitat Valenciana Talento Divergente",
+            "url": "https://fundaciontalentodivergente.org",
+            "description": "Fundación que posiciona la neurodiversidad como ventaja competitiva empresarial",
+            "foundingDate": "2026",
+            "areaServed": {"@type": "AdministrativeArea", "name": "Comunitat Valenciana"},
+            "sameAs": ["https://www.linkedin.com/company/fundaci%C3%B3n-talento-divergente/"]
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://fundaciontalentodivergente.org/"},
+            {"@type": "ListItem", "position": 2, "name": "Quiénes Somos", "item": "https://fundaciontalentodivergente.org/quienes-somos.html"}
+        ]
+    }
+    </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -126,7 +154,7 @@
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-icon">
-                            <span style="font-size: 1.5rem;">🎯</span>
+                            <span class="emoji-icon">🎯</span>
                         </div>
                         <h3 class="service-title" data-i18n="about_value1_title">Inclusión Real</h3>
                         <p class="service-description" data-i18n="about_value1_desc">
@@ -135,7 +163,7 @@
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
-                            <span style="font-size: 1.5rem;">🔬</span>
+                            <span class="emoji-icon">🔬</span>
                         </div>
                         <h3 class="service-title" data-i18n="about_value2_title">Base Científica</h3>
                         <p class="service-description" data-i18n="about_value2_desc">
@@ -144,7 +172,7 @@
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
-                            <span style="font-size: 1.5rem;">💼</span>
+                            <span class="emoji-icon">💼</span>
                         </div>
                         <h3 class="service-title" data-i18n="about_value3_title">Enfoque Empresarial</h3>
                         <p class="service-description" data-i18n="about_value3_desc">

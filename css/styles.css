@@ -1450,3 +1450,30 @@ span.highlight {
         grid-template-columns: 1fr;
     }
 }
+
+/* LinkedIn CTA button in contact section */
+.linkedin-cta-btn {
+    margin-top: 0.75rem;
+}
+
+/* Emoji icon in service cards */
+.emoji-icon {
+    font-size: 1.5rem;
+}
+
+/* Legal page last-update note */
+.legal-update {
+    margin-top: 2rem;
+    color: var(--clr-text-muted);
+    font-size: 0.875rem;
+}
+
+/* 2-column stats grid variant */
+.stats-grid-2col {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Spacing utility */
+.mt-2 {
+    margin-top: 2rem;
+}

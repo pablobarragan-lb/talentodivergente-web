@@ -29,6 +29,41 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Nuestros Servicios | Talento Divergente">
     <meta name="twitter:description" content="Formación especializada, acompañamiento laboral y consultoría empresarial para la inclusión del talento neurodivergente.">
+    <meta name="twitter:image" content="https://fundaciontalentodivergente.org/assets/logo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "provider": {
+            "@type": "NonprofitOrganization",
+            "name": "Fundación Talento Divergente",
+            "url": "https://fundaciontalentodivergente.org"
+        },
+        "serviceType": "Inclusión laboral neurodivergente",
+        "areaServed": {"@type": "AdministrativeArea", "name": "Comunitat Valenciana"},
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Servicios de inclusión",
+            "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Formación Especializada", "description": "Programas de competencias laborales adaptados a perfiles neurodivergentes"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Acompañamiento Laboral", "description": "Empleo con apoyo y mediación continua durante la incorporación"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Consultoría Empresarial", "description": "Asesoramiento para adaptar procesos de selección y cultura organizacional"}}
+            ]
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://fundaciontalentodivergente.org/"},
+            {"@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://fundaciontalentodivergente.org/servicios.html"}
+        ]
+    }
+    </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -150,7 +185,7 @@
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-icon">
-                            <span style="font-size: 1.5rem;">🚀</span>
+                            <span class="emoji-icon">🚀</span>
                         </div>
                         <h3 class="service-title" data-i18n="srv_tier1_title">Startups (&lt;50 empleados)</h3>
                         <p class="service-description" data-i18n="srv_tier1_name"><strong>Kit de Diseño de Cultura Inclusiva</strong></p>
@@ -160,7 +195,7 @@
                     </div>
                     <div class="service-card highlighted">
                         <div class="service-icon">
-                            <span style="font-size: 1.5rem;">🏢</span>
+                            <span class="emoji-icon">🏢</span>
                         </div>
                         <h3 class="service-title" data-i18n="srv_tier2_title">Medianas (51-250 empleados)</h3>
                         <p class="service-description" data-i18n="srv_tier2_name"><strong>Programa de Cohesión y Adaptación Mutua</strong></p>
@@ -170,7 +205,7 @@
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
-                            <span style="font-size: 1.5rem;">🏛️</span>
+                            <span class="emoji-icon">🏛️</span>
                         </div>
                         <h3 class="service-title" data-i18n="srv_tier3_title">Grandes (+250 empleados)</h3>
                         <p class="service-description" data-i18n="srv_tier3_name"><strong>Auditoría Forense de RRHH y Cumplimiento Normativo</strong></p>
