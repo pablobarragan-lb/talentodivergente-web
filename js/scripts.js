@@ -1,3 +1,15 @@
+// Domain redirect: .com and .es -> .org (301-equivalent via JS)
+(function() {
+    var host = window.location.hostname;
+    if (host.indexOf('fundaciontalentodivergente.com') !== -1 ||
+        host.indexOf('fundaciontalentodivergente.es') !== -1) {
+        window.location.replace(
+            'https://fundaciontalentodivergente.org' +
+            window.location.pathname + window.location.search
+        );
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
     // Translations Data
     const translations = {
