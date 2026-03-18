@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="head_title">Talento Divergente | Inclusión Efectiva</title>
+    <meta name="description" content="Fundación centrada en la ocupación y acompañamiento de talento neurodivergente hacia la incorporación laboral.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="assets/logo.png" alt="Talento Divergente" class="logo-img">
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#inicio" data-i18n="nav_start">Inicio</a></li>
+                <li><a href="#neurodiversidad" data-i18n="nav_neuro">Neurodiversidad</a></li>
+                <li><a href="#servicios" data-i18n="nav_services">Servicios</a></li>
+                <li><a href="#nosotros" data-i18n="nav_about">Nosotros</a></li>
+                <li><a href="#empresas" data-i18n="nav_companies">Para Empresas</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="es">ES</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <a href="#contacto" class="btn btn-primary" data-i18n="nav_cta">Únete a Nosotros</a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-links">
+            <li><a href="#inicio" data-i18n="nav_start">Inicio</a></li>
+            <li><a href="#neurodiversidad" data-i18n="nav_neuro">Neurodiversidad</a></li>
+            <li><a href="#servicios" data-i18n="nav_services">Servicios</a></li>
+            <li><a href="#nosotros" data-i18n="nav_about">Nosotros</a></li>
+            <li><a href="#empresas" data-i18n="nav_companies">Para Empresas</a></li>
+            <li><a href="#contacto" class="btn btn-primary" data-i18n="nav_cta">Únete a Nosotros</a></li>
+        </ul>
+        <div class="mobile-lang-switcher">
+            <button class="lang-btn active" data-lang="es">Español</button>
+            <button class="lang-btn" data-lang="en">English</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero" id="inicio">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-i18n="hero_title">Transformando la <span>neurodiversidad</span> en ventaja competitiva</h1>
+                <p class="hero-description" data-i18n="hero_desc">
+                    Somos el puente entre el talento único de las personas neurodivergentes y las empresas innovadoras. Creamos entornos donde todos pueden brillar.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="#servicios" class="btn btn-primary" data-i18n="hero_btn_discover">Descubre cómo</a>
+                    <a href="#nosotros" class="btn btn-outline" data-i18n="hero_btn_about">Conócenos</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual-wrapper">
+                <div class="connection-visual">
+                    <div class="node-talent">
+                        <div class="node-icon">👨‍💻</div>
+                        <span data-i18n="node_talent">Talento</span>
+                    </div>
+                    <div class="connection-flow">
+                        <div class="flow-line"></div>
+                        <div class="flow-particles">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="node-company">
+                        <div class="node-icon">🏢</div>
+                        <span data-i18n="node_company">Empresa</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label" data-i18n="stat_people">Personas Apoyadas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label" data-i18n="stat_companies">Empresas Aliadas</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Neurodiversity Section -->
+    <section class="neuro-section section" id="neurodiversidad">
+        <div class="container neuro-container-small">
+            <div class="neuro-content text-center">
+                <h2 class="section-title" data-i18n="neuro_title">¿Qué es la neurodiversidad?</h2>
+                <p class="neuro-text" data-i18n="neuro_desc">
+                    La neurodiversidad es la idea de que las diferencias en el cerebro humano son variaciones naturales y no déficits. Reconoce que cada mente procesa la información de manera única, aportando fortalezas indispensables como el pensamiento analítico, la creatividad y la atención al detalle.
+                </p>
+                <div class="neuro-tags">
+                    <span class="tag" data-i18n="neuro_tag_1">Perspectiva Única</span>
+                    <span class="tag" data-i18n="neuro_tag_2">Innovación</span>
+                    <span class="tag" data-i18n="neuro_tag_3">Resolución de problemas</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section section-alt" id="nosotros">
+        <div class="container container-narrow">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2 class="section-title" data-i18n="about_title">Nuestra Misión</h2>
+                    <p class="section-desc" data-i18n="about_desc">
+                        En la Fundación Talento Divergente, trabajamos para derribar las barreras que impiden el acceso al empleo de personas con neurodiversidad. Creemos en un mercado laboral inclusivo donde las capacidades únicas sean el motor del cambio.
+                    </p>
+                    <div class="mission-icons">
+                        <div class="mission-item">
+                            <span class="m-icon">🎯</span>
+                            <span class="m-text" data-i18n="about_stat_1">Inclusión Real</span>
+                        </div>
+                        <div class="mission-item">
+                            <span class="m-icon">🤝</span>
+                            <span class="m-text" data-i18n="about_stat_2">Apoyo Continuo</span>
+                        </div>
+                        <div class="mission-item">
+                            <span class="m-icon">🌍</span>
+                            <span class="m-text" data-i18n="about_stat_3">Impacto Social</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section" id="servicios">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title" data-i18n="services_title">Nuestros Pilares de Acción</h2>
+                <p class="section-subtitle" data-i18n="services_subtitle">Un enfoque integral para garantizar una inclusión sociolaboral efectiva y duradera.</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    </div>
+                    <h3 class="service-title" data-i18n="s1_title">Formación Especializada</h3>
+                    <p class="service-description" data-i18n="s1_desc">
+                        Programas enfocados en desarrollar tanto competencias técnicas como habilidades interpersonales necesarias en el entorno profesional.
+                    </p>
+                    <ul class="service-features">
+                        <li data-i18n="s1_f1">Soft skills laborales</li>
+                        <li data-i18n="s1_f2">Habilidades sociales</li>
+                        <li data-i18n="s1_f3">Gestión del entorno</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card highlighted">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3 class="service-title" data-i18n="s2_title">Acompañamiento Laboral</h3>
+                    <p class="service-description" data-i18n="s2_desc">
+                        Mediación continua durante la adaptación. El "empleo con apoyo" garantiza que la comunicación entre trabajador y empresa sea fluida.
+                    </p>
+                    <ul class="service-features">
+                        <li data-i18n="s2_f1">Mediación personalizada</li>
+                        <li data-i18n="s2_f2">Seguimiento periódico</li>
+                        <li data-i18n="s2_f3">Resolución de conflictos</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </div>
+                    <h3 class="service-title" data-i18n="s3_title">Consultoría Empresarial</h3>
+                    <p class="service-description" data-i18n="s3_desc">
+                        Asesoramos a las organizaciones para adaptar procesos de selección y dinámicas de equipo, promoviendo una inclusión real.
+                    </p>
+                    <ul class="service-features">
+                        <li data-i18n="s3_f1">Auditoría de inclusión</li>
+                        <li data-i18n="s3_f2">Sesiones de sensibilización</li>
+                        <li data-i18n="s3_f3">Adaptación de procesos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dual Target Section -->
+    <section class="dual-target section" id="empresas">
+        <div class="container dual-target-container">
+            <div class="split-content for-talent">
+                <div class="split-icon">👨‍💻</div>
+                <h2 class="split-title" data-i18n="dual_talent_title">Para el Talento</h2>
+                <p class="split-desc" data-i18n="dual_talent_desc">Encontramos empresas que valoran tu forma única de ver el mundo. Te preparamos y acompañamos en todo el proceso.</p>
+                <a href="#contacto" class="btn btn-outline-light" data-i18n="dual_talent_btn">Busco Empleo</a>
+            </div>
+            
+            <div class="split-content for-company">
+                <div class="split-icon">🏢</div>
+                <h2 class="split-title" data-i18n="dual_company_title">Para Empresas</h2>
+                <p class="split-desc" data-i18n="dual_company_desc">La neurodiversidad aporta enfoque, atención al detalle e innovación. Potencia tu equipo con talento divergente.</p>
+                <a href="#contacto" class="btn btn-primary" data-i18n="dual_company_btn">Contratar Talento</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">
+                    <img src="assets/logo.png" alt="Talento Divergente" class="logo-img">
+                </a>
+                <p class="footer-text" data-i18n="footer_desc">
+                    Construyendo puentes entre el talento neurodivergente y empresas preparadas para el futuro.
+                </p>
+            </div>
+            
+            <div class="footer-links-group">
+                <h4 class="footer-heading" data-i18n="footer_links_title">Enlaces</h4>
+                <ul>
+                    <li><a href="#inicio" data-i18n="nav_start">Inicio</a></li>
+                    <li><a href="#servicios" data-i18n="nav_services">Servicios</a></li>
+                    <li><a href="#nosotros" data-i18n="nav_about">Nosotros</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h4 class="footer-heading" data-i18n="footer_contact_title">Contacto</h4>
+                <p>hola@talentodivergente.org</p>
+                <p>+34 600 000 000</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="Twitter">tw</a>
+                    <a href="#" aria-label="Instagram">ig</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="footer_copy">&copy; 2026 Fundación Talento Divergente. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
