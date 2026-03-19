@@ -1,3 +1,2 @@
 User-agent: *
-Allow: /
-Sitemap: https://fundaciontalentodivergente.org/sitemap.xml
+Disallow: /
