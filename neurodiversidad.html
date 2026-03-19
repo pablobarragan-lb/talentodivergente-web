@@ -103,15 +103,46 @@
             <a href="index.html" class="logo">
                 <img src="assets/logo.png" alt="Talento Divergente" class="logo-img">
             </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav_start">Inicio</a></li>
+                <li><a href="neurodiversidad.html" data-i18n="nav_neuro">Neurodiversidad</a></li>
+                <li><a href="servicios.html" data-i18n="nav_services">Servicios</a></li>
+                <li><a href="quienes-somos.html" data-i18n="nav_about">Nosotros</a></li>
+                <li><a href="empresas.html" data-i18n="nav_companies">Para Empresas</a></li>
+            </ul>
+
             <div class="nav-actions">
-                <div class="subpage-lang-switcher">
+                <div class="lang-switcher">
                     <button class="lang-btn active" data-lang="es">ES</button>
+                    <span class="lang-divider">|</span>
                     <button class="lang-btn" data-lang="en">EN</button>
                 </div>
-                <a href="index.html" class="btn btn-outline" data-i18n="nav_back_home">Volver al inicio</a>
+                <a href="index.html#contacto" class="btn btn-primary" data-i18n="nav_cta">Únete a Nosotros</a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-links">
+            <li><a href="index.html" data-i18n="nav_start">Inicio</a></li>
+            <li><a href="neurodiversidad.html" data-i18n="nav_neuro">Neurodiversidad</a></li>
+            <li><a href="servicios.html" data-i18n="nav_services">Servicios</a></li>
+            <li><a href="quienes-somos.html" data-i18n="nav_about">Nosotros</a></li>
+            <li><a href="empresas.html" data-i18n="nav_companies">Para Empresas</a></li>
+            <li><a href="index.html#contacto" class="btn btn-primary" data-i18n="nav_cta">Únete a Nosotros</a></li>
+        </ul>
+        <div class="mobile-lang-switcher">
+            <button class="lang-btn active" data-lang="es">Español</button>
+            <button class="lang-btn" data-lang="en">English</button>
+        </div>
+    </div>
 
     <!-- Page Hero -->
     <header class="page-hero">
