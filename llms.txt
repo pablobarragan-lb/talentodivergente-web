@@ -32,6 +32,7 @@ La Fundacion de la Comunitat Valenciana Talento Divergente es una organizacion s
 
 ## Datos clave
 
+- **CIF**: G27561760
 - **Ubicacion**: Moncofa, Castellon, Comunitat Valenciana, Espana
 - **Email**: contacto@fundaciontalentodivergente.org
 - **Web**: https://fundaciontalentodivergente.org

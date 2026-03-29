@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // -- aviso-legal.html (content) --
             legal_s1_title: "1. Datos identificativos",
             legal_s1_intro: "En cumplimiento del deber de información recogido en el artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSICE), a continuación se reflejan los siguientes datos:",
-            legal_s1_list: "<li><strong>Denominación social:</strong> Fundación de la Comunitat Valenciana Talento Divergente</li><li><strong>CIF:</strong> En trámite de asignación por la Agencia Tributaria</li><li><strong>Domicilio social:</strong> Calle Torremolinos 35, bajo C, CP 12593, Moncofa, Castellón</li><li><strong>Correo electrónico:</strong> contacto@fundaciontalentodivergente.org</li><li><strong>Sitio web:</strong> www.fundaciontalentodivergente.org</li>",
+            legal_s1_list: "<li><strong>Denominación social:</strong> Fundación de la Comunitat Valenciana Talento Divergente</li><li><strong>CIF:</strong> G27561760</li><li><strong>Domicilio social:</strong> Calle Torremolinos 35, bajo C, CP 12593, Moncofa, Castellón</li><li><strong>Correo electrónico:</strong> contacto@fundaciontalentodivergente.org</li><li><strong>Sitio web:</strong> www.fundaciontalentodivergente.org</li>",
             legal_s2_title: "2. Registro",
             legal_s2_text: "La Fundación de la Comunitat Valenciana Talento Divergente se encuentra inscrita en el Registro de Fundaciones de la Comunitat Valenciana, adscrito a la Conselleria competente de la Generalitat Valenciana, y está sujeta al Protectorado de Fundaciones de la Comunitat Valenciana.",
             legal_s3_title: "3. Objeto del sitio web",
@@ -434,7 +434,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // -- aviso-legal.html (content) --
             legal_s1_title: "1. Identification details",
             legal_s1_intro: "In compliance with the duty of information set forth in Article 10 of Law 34/2002, of July 11, on Information Society Services and Electronic Commerce (LSSICE), the following details are provided:",
-            legal_s1_list: "<li><strong>Legal name:</strong> Fundación de la Comunitat Valenciana Talento Divergente</li><li><strong>Tax ID (CIF):</strong> Pending assignment by the Spanish Tax Agency</li><li><strong>Registered office:</strong> Calle Torremolinos 35, bajo C, CP 12593, Moncofa, Castellón, Spain</li><li><strong>Email:</strong> contacto@fundaciontalentodivergente.org</li><li><strong>Website:</strong> www.fundaciontalentodivergente.org</li>",
+            legal_s1_list: "<li><strong>Legal name:</strong> Fundación de la Comunitat Valenciana Talento Divergente</li><li><strong>Tax ID (CIF):</strong> G27561760</li><li><strong>Registered office:</strong> Calle Torremolinos 35, bajo C, CP 12593, Moncofa, Castellón, Spain</li><li><strong>Email:</strong> contacto@fundaciontalentodivergente.org</li><li><strong>Website:</strong> www.fundaciontalentodivergente.org</li>",
             legal_s2_title: "2. Registration",
             legal_s2_text: "Fundación de la Comunitat Valenciana Talento Divergente is registered in the Foundation Registry of the Valencian Community, attached to the competent Department of the Generalitat Valenciana, and is subject to the Foundation Protectorate of the Valencian Community.",
             legal_s3_title: "3. Purpose of the website",
