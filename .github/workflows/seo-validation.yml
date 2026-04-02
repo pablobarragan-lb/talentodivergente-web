@@ -1,0 +1,98 @@
+name: SEO Validation
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '**.html'
+      - 'sitemap.xml'
+      - 'robots.txt'
+      - 'staticwebapp.config.json'
+
+jobs:
+  validate-seo:
+    runs-on: ubuntu-latest
+    name: Validate SEO & Indexation Rules
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check canonical tags in all HTML files
+        run: |
+          echo "=== Checking canonical tags ==="
+          errors=0
+          for file in *.html; do
+            [ "$file" = "404.html" ] && continue
+            slug="${file%.html}"
+            [ "$slug" = "index" ] && expected="https://fundaciontalentodivergente.org/" || expected="https://fundaciontalentodivergente.org/$slug"
+
+            if ! grep -q "rel=\"canonical\" href=\"$expected\"" "$file"; then
+              echo "ERROR: $file missing or incorrect canonical (expected $expected)"
+              errors=$((errors + 1))
+            fi
+          done
+          [ $errors -gt 0 ] && exit 1
+          echo "All canonical tags correct"
+
+      - name: Check no .html in canonical/og:url/sitemap
+        run: |
+          echo "=== Checking for .html references ==="
+          errors=0
+
+          # Check HTML files for .html in canonical, og:url, hreflang, JSON-LD items
+          for file in *.html; do
+            if grep -E '(rel="canonical"|og:url|hreflang|"item")' "$file" | grep -q '\.html'; then
+              echo "ERROR: $file has .html extension in SEO metadata"
+              errors=$((errors + 1))
+            fi
+          done
+
+          # Check sitemap for .html
+          if grep -q '\.html' sitemap.xml; then
+            echo "ERROR: sitemap.xml contains .html extensions"
+            errors=$((errors + 1))
+          fi
+
+          # Check sitemap only uses canonical domain (no www)
+          if grep -q 'www\.fundaciontalentodivergente' sitemap.xml; then
+            echo "ERROR: sitemap.xml contains www URLs"
+            errors=$((errors + 1))
+          fi
+
+          [ $errors -gt 0 ] && exit 1
+          echo "No .html references found in SEO metadata"
+
+      - name: Check no www in canonical/og:url/hreflang
+        run: |
+          echo "=== Checking for www references in SEO tags ==="
+          errors=0
+          for file in *.html; do
+            if grep -E '(rel="canonical"|og:url|hreflang)' "$file" | grep -q 'www\.fundaciontalentodivergente'; then
+              echo "ERROR: $file has www in SEO metadata"
+              errors=$((errors + 1))
+            fi
+          done
+          [ $errors -gt 0 ] && exit 1
+          echo "No www references found in SEO metadata"
+
+      - name: Check redirect config intact
+        run: |
+          echo "=== Checking staticwebapp.config.json ==="
+          if ! grep -q '"route": "/index.html"' staticwebapp.config.json; then
+            echo "ERROR: index.html redirect rule missing from staticwebapp.config.json"
+            exit 1
+          fi
+          if ! grep -q '"statusCode": 301' staticwebapp.config.json; then
+            echo "ERROR: 301 status code missing from redirect rule"
+            exit 1
+          fi
+          echo "Redirect configuration intact"
+
+      - name: Check sitemap URLs match canonical domain
+        run: |
+          echo "=== Validating sitemap.xml ==="
+          # All loc URLs must use https://fundaciontalentodivergente.org/
+          if grep '<loc>' sitemap.xml | grep -vq 'https://fundaciontalentodivergente.org/'; then
+            echo "ERROR: sitemap.xml contains non-canonical URLs"
+            exit 1
+          fi
+          echo "Sitemap URLs are canonical"
