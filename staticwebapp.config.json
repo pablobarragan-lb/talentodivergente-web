@@ -4,6 +4,36 @@
       "route": "/index.html",
       "redirect": "/",
       "statusCode": 301
+    },
+    {
+      "route": "/quienes-somos.html",
+      "redirect": "/quienes-somos",
+      "statusCode": 301
+    },
+    {
+      "route": "/servicios.html",
+      "redirect": "/servicios",
+      "statusCode": 301
+    },
+    {
+      "route": "/empresas.html",
+      "redirect": "/empresas",
+      "statusCode": 301
+    },
+    {
+      "route": "/neurodiversidad.html",
+      "redirect": "/neurodiversidad",
+      "statusCode": 301
+    },
+    {
+      "route": "/aviso-legal.html",
+      "redirect": "/aviso-legal",
+      "statusCode": 301
+    },
+    {
+      "route": "/politica-privacidad.html",
+      "redirect": "/politica-privacidad",
+      "statusCode": 301
     }
   ],
   "globalHeaders": {
