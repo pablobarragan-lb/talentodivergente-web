@@ -38,7 +38,6 @@ jobs:
           echo "=== Checking for .html references ==="
           errors=0
 
-          # Check HTML files for .html in canonical, og:url, hreflang, JSON-LD items
           for file in *.html; do
             if grep -E '(rel="canonical"|og:url|hreflang|"item")' "$file" | grep -q '\.html'; then
               echo "ERROR: $file has .html extension in SEO metadata"
@@ -46,13 +45,11 @@ jobs:
             fi
           done
 
-          # Check sitemap for .html
           if grep -q '\.html' sitemap.xml; then
             echo "ERROR: sitemap.xml contains .html extensions"
             errors=$((errors + 1))
           fi
 
-          # Check sitemap only uses canonical domain (no www)
           if grep -q 'www\.fundaciontalentodivergente' sitemap.xml; then
             echo "ERROR: sitemap.xml contains www URLs"
             errors=$((errors + 1))
@@ -74,25 +71,84 @@ jobs:
           [ $errors -gt 0 ] && exit 1
           echo "No www references found in SEO metadata"
 
-      - name: Check redirect config intact
+      - name: Check redirect config for all .html pages
         run: |
-          echo "=== Checking staticwebapp.config.json ==="
-          if ! grep -q '"route": "/index.html"' staticwebapp.config.json; then
-            echo "ERROR: index.html redirect rule missing from staticwebapp.config.json"
-            exit 1
-          fi
+          echo "=== Checking staticwebapp.config.json redirects ==="
+          errors=0
+          for file in *.html; do
+            [ "$file" = "404.html" ] && continue
+            slug="${file%.html}"
+            if [ "$slug" = "index" ]; then
+              route="/index.html"
+              target="/"
+            else
+              route="/$slug.html"
+              target="/$slug"
+            fi
+            if ! grep -q "\"route\": \"$route\"" staticwebapp.config.json; then
+              echo "ERROR: Missing redirect rule for $route -> $target in staticwebapp.config.json"
+              errors=$((errors + 1))
+            fi
+          done
           if ! grep -q '"statusCode": 301' staticwebapp.config.json; then
-            echo "ERROR: 301 status code missing from redirect rule"
-            exit 1
+            echo "ERROR: 301 status code missing from redirect rules"
+            errors=$((errors + 1))
           fi
-          echo "Redirect configuration intact"
+          [ $errors -gt 0 ] && exit 1
+          echo "All .html redirect rules present"
 
       - name: Check sitemap URLs match canonical domain
         run: |
           echo "=== Validating sitemap.xml ==="
-          # All loc URLs must use https://fundaciontalentodivergente.org/
           if grep '<loc>' sitemap.xml | grep -vq 'https://fundaciontalentodivergente.org/'; then
             echo "ERROR: sitemap.xml contains non-canonical URLs"
             exit 1
           fi
           echo "Sitemap URLs are canonical"
+
+      - name: Check meta description and lang in all pages
+        run: |
+          echo "=== Checking meta description and lang ==="
+          errors=0
+          for file in *.html; do
+            [ "$file" = "404.html" ] && continue
+            if ! grep -q 'name="description"' "$file"; then
+              echo "ERROR: $file missing meta description"
+              errors=$((errors + 1))
+            fi
+            if ! grep -q 'lang="es"' "$file"; then
+              echo "ERROR: $file missing lang=\"es\" on html tag"
+              errors=$((errors + 1))
+            fi
+          done
+          [ $errors -gt 0 ] && exit 1
+          echo "All pages have meta description and lang"
+
+      - name: Check no .html in internal links
+        run: |
+          echo "=== Checking internal links for .html ==="
+          errors=0
+          for file in *.html; do
+            # Match href containing .html but exclude external links and canonical/og/hreflang (already checked)
+            if grep -oP 'href="[^"]*"' "$file" | grep -v 'http' | grep -q '\.html'; then
+              echo "ERROR: $file has internal links with .html extension"
+              errors=$((errors + 1))
+            fi
+          done
+          [ $errors -gt 0 ] && exit 1
+          echo "No .html in internal links"
+
+      - name: Check robots.txt
+        run: |
+          echo "=== Checking robots.txt ==="
+          errors=0
+          if ! grep -q 'User-agent: \*' robots.txt; then
+            echo "ERROR: robots.txt missing User-agent: *"
+            errors=$((errors + 1))
+          fi
+          if ! grep -q 'Sitemap: https://fundaciontalentodivergente.org/sitemap.xml' robots.txt; then
+            echo "ERROR: robots.txt has wrong sitemap URL"
+            errors=$((errors + 1))
+          fi
+          [ $errors -gt 0 ] && exit 1
+          echo "robots.txt correct"
