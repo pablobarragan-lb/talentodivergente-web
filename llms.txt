@@ -42,12 +42,12 @@ La Fundacion de la Comunitat Valenciana Talento Divergente es una organizacion s
 ## Paginas del sitio
 
 - [Inicio](https://fundaciontalentodivergente.org/)
-- [Quienes Somos](https://fundaciontalentodivergente.org/quienes-somos.html)
-- [Servicios](https://fundaciontalentodivergente.org/servicios.html)
-- [Para Empresas](https://fundaciontalentodivergente.org/empresas.html)
-- [Neurodiversidad](https://fundaciontalentodivergente.org/neurodiversidad.html)
-- [Aviso Legal](https://fundaciontalentodivergente.org/aviso-legal.html)
-- [Politica de Privacidad](https://fundaciontalentodivergente.org/politica-privacidad.html)
+- [Quienes Somos](https://fundaciontalentodivergente.org/quienes-somos)
+- [Servicios](https://fundaciontalentodivergente.org/servicios)
+- [Para Empresas](https://fundaciontalentodivergente.org/empresas)
+- [Neurodiversidad](https://fundaciontalentodivergente.org/neurodiversidad)
+- [Aviso Legal](https://fundaciontalentodivergente.org/aviso-legal)
+- [Politica de Privacidad](https://fundaciontalentodivergente.org/politica-privacidad)
 
 ## Marco legal
 

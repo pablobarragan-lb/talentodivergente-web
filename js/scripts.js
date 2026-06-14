@@ -1,3 +1,6 @@
+// Add js class for CSS fallback (no-JS / reduced-motion guard)
+document.documentElement.classList.add('js');
+
 document.addEventListener('DOMContentLoaded', () => {
     // ========================================
     // TRANSLATIONS
@@ -28,8 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
             hero_desc: "Transformamos la neurodivergencia en la ventaja competitiva de tu empresa. Conectamos mentes extraordinarias con equipos que buscan resultados innovadores.",
             hero_btn_discover: "Descubre cómo",
             hero_btn_about: "Conócenos",
-            stat_people: "Personas Apoyadas",
-            stat_companies: "Empresas Aliadas",
             node_talent: "Talento",
             node_company: "Empresa",
 
@@ -89,10 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_form_subject_collab: "Propuesta de colaboración",
             contact_form_subject_other: "Otro",
             contact_form_message: "Mensaje",
-            contact_form_privacy: "He leído y acepto la <a href=\"politica-privacidad.html\">Política de Privacidad</a>",
+            contact_form_privacy: "He leído y acepto la <a href=\"/politica-privacidad\">Política de Privacidad</a>",
             contact_form_submit: "Enviar mensaje",
             contact_form_sending: "Enviando...",
-            contact_form_success: "Mensaje enviado correctamente. Te responderemos pronto.",
+            contact_form_success: "Hemos recibido tu mensaje. Te responderemos lo antes posible.",
             contact_form_error: "Hubo un error. Por favor, inténtalo de nuevo o escríbenos directamente a contacto@fundaciontalentodivergente.org",
 
             // -- quienes-somos.html --
@@ -226,20 +227,20 @@ document.addEventListener('DOMContentLoaded', () => {
             privacy_s5_aepd: "Asimismo, el usuario tiene derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (<a href=\"https://www.aepd.es\" target=\"_blank\" rel=\"noopener\">www.aepd.es</a>) si considera que el tratamiento de sus datos no se ajusta a la normativa vigente.",
             privacy_s6_title: "6. Cookies",
             privacy_s6_intro: "Este sitio web utiliza los siguientes tipos de cookies:",
-            privacy_s6_list: "<li><strong>Cookies técnicas (estrictamente necesarias):</strong> permiten el correcto funcionamiento de la página. No recogen datos personales identificables y se eliminan al cerrar el navegador.</li><li><strong>Cookies analíticas (Google Analytics):</strong> recogen información anónima sobre el uso del sitio web (páginas visitadas, duración de la visita, origen del tráfico). Estas cookies solo se activan si el usuario acepta expresamente a través del banner de consentimiento. El proveedor de este servicio es Google LLC. Puede consultar su política de privacidad en <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">policies.google.com/privacy</a>.</li>",
-            privacy_s6_text: "El usuario puede aceptar o rechazar las cookies analíticas a través del banner que se muestra en su primera visita. La preferencia se almacena en el navegador (localStorage) y puede modificarse en cualquier momento borrando los datos del sitio en la configuración del navegador.",
+            privacy_s6_list: "<li><strong>Cookies técnicas (estrictamente necesarias):</strong> permiten el correcto funcionamiento de la página. No recogen datos personales identificables y se eliminan al cerrar el navegador.</li><li><strong>Cookies analíticas (Google Analytics):</strong> recogen información <strong>seudonimizada y agregada</strong> sobre el uso del sitio web (páginas visitadas, duración de la visita, origen del tráfico). Estas cookies solo se activan si el usuario acepta expresamente a través del banner de consentimiento. El proveedor de este servicio es Google LLC. Puede consultar su política de privacidad en <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">policies.google.com/privacy</a>. El tratamiento lo realiza Google LLC, lo que puede implicar transferencia de datos a Estados Unidos (ver apartado 8).</li>",
+            privacy_s6_text: "El usuario puede aceptar o rechazar las cookies analíticas a través del banner que se muestra en su primera visita. La preferencia se almacena en el navegador (localStorage) y puede modificarse en cualquier momento borrando los datos del sitio en la configuración del navegador. También puede revocar su consentimiento en cualquier momento mediante el botón «Configurar cookies» disponible en el pie de página.",
             privacy_s7_title: "7. Periodo de conservación",
             privacy_s7_intro: "Los datos personales proporcionados se conservarán durante el tiempo necesario para atender la solicitud o consulta del usuario y, en su caso, durante los plazos legalmente establecidos. Una vez cumplida la finalidad del tratamiento, los datos serán suprimidos de forma segura o, en su caso, bloqueados conforme a la normativa aplicable.",
             privacy_s7_detail: "En particular:",
             privacy_s7_list: "<li>Datos de consultas por correo electrónico o formulario: se conservarán durante el tiempo necesario para resolver la consulta y un máximo de 12 meses adicionales.</li><li>Datos de relaciones profesionales: durante la vigencia de la relación y los plazos de prescripción legal aplicables.</li>",
             privacy_s8_title: "8. Destinatarios de los datos",
-            privacy_s8_text: "Los datos personales no serán cedidos a terceros salvo obligación legal. No se realizan transferencias internacionales de datos fuera del Espacio Económico Europeo.",
+            privacy_s8_text: "Para la prestación de determinados servicios, la Fundación utiliza proveedores tecnológicos que actúan como encargados del tratamiento: <strong>Google LLC</strong> (alojamiento del formulario de contacto mediante Google Apps Script y analítica web mediante Google Analytics). Estos proveedores pueden tratar los datos en servidores ubicados en <strong>Estados Unidos</strong>, por lo que se producen transferencias internacionales de datos, amparadas en el marco de adecuación <strong>EU-US Data Privacy Framework</strong> y/o en las Cláusulas Contractuales Tipo aprobadas por la Comisión Europea. Salvo esta utilización de encargados del tratamiento y las obligaciones legales exigibles, los datos no serán cedidos a terceros.",
             privacy_s9_title: "9. Seguridad",
             privacy_s9_text: "La Fundación ha adoptado las medidas técnicas y organizativas necesarias para garantizar la seguridad de los datos personales y evitar su alteración, pérdida, tratamiento o acceso no autorizado, habida cuenta del estado de la tecnología, la naturaleza de los datos almacenados y los riesgos a que están expuestos.",
             privacy_s10_title: "10. Contacto",
             privacy_s10_intro: "Para cualquier cuestión relacionada con el tratamiento de sus datos personales o el ejercicio de sus derechos, puede contactar con nosotros en:",
             privacy_s10_list: "<li><strong>Email:</strong> <a href=\"mailto:contacto@fundaciontalentodivergente.org\">contacto@fundaciontalentodivergente.org</a></li><li><strong>Dirección postal:</strong> Fundación de la Comunitat Valenciana Talento Divergente, Calle Torremolinos 35, bajo C, CP 12593, Moncofa, Castellón</li>",
-            privacy_update: "<em>Última actualización: marzo de 2026.</em>",
+            privacy_update: "<em>Última actualización: junio de 2026.</em>",
             page_legal_title: "Aviso Legal | Talento Divergente",
             page_legal_heading: "Aviso Legal",
             breadcrumb_legal: "Aviso Legal",
@@ -247,7 +248,105 @@ document.addEventListener('DOMContentLoaded', () => {
             // -- politica-privacidad.html --
             page_privacy_title: "Política de Privacidad | Talento Divergente",
             page_privacy_heading: "Política de Privacidad",
-            breadcrumb_privacy: "Política de Privacidad"
+            breadcrumb_privacy: "Política de Privacidad",
+
+            // -- Global: skip link + form privacy notice --
+            skip_link: "Saltar al contenido",
+            form_privacy_notice: "Responsable: Fundación de la Comunitat Valenciana Talento Divergente. Finalidad: atender tu consulta. Legitimación: tu consentimiento. No se ceden datos salvo obligación legal; se usan encargados (Google) con transferencia a EE.UU. amparada en el EU-US Data Privacy Framework. Derechos: acceso, rectificación, supresión y otros, escribiendo a contacto@fundaciontalentodivergente.org. Más información en la Política de Privacidad.",
+
+            // -- empresas.html: business-case stat cards --
+            emp_stat1_title: "Innovación",
+            emp_stat1_desc: "El pensamiento divergente genera soluciones que los equipos homogéneos no alcanzan. Nuevas perspectivas para problemas complejos.",
+            emp_stat2_title: "Atención al detalle",
+            emp_stat2_desc: "Capacidad excepcional para detectar errores, patrones y anomalías en datos, código y procesos de calidad.",
+            emp_stat3_title: "Pensamiento analítico",
+            emp_stat3_desc: "Razonamiento lógico y sistemático que aporta rigor en la toma de decisiones y la resolución de problemas técnicos.",
+
+            // -- empresas.html: profile cards --
+            emp_prof1_title: "Perfil Creativo",
+            emp_prof1_desc: "Profesionales con talento excepcional en <strong>Animación 3D, VFX, UX/UI</strong> y diseño digital. Su capacidad para visualizar soluciones complejas y su atención obsesiva al detalle los convierte en activos de alto valor para la industria creativa.",
+            emp_prof1_sector: "<em>Sector objetivo: industria de animación, gaming y VFX del eje Valencia-Alicante.</em>",
+            emp_prof1_role1: "Animación 3D",
+            emp_prof1_role2: "VFX",
+            emp_prof1_role3: "UX/UI",
+            emp_prof1_role4: "Diseño digital",
+            emp_prof2_title: "Perfil Analítico",
+            emp_prof2_desc: "Especialistas en <strong>ciberseguridad, QA (testing) y análisis de datos</strong>. Su pensamiento sistemático, capacidad para detectar anomalías y resistencia a la fatiga cognitiva en tareas repetitivas los hacen ideales para roles donde la precisión es crítica.",
+            emp_prof2_sector: "<em>Sector objetivo: ecosistema startup y tech del hub de Valencia.</em>",
+            emp_prof2_role1: "Ciberseguridad",
+            emp_prof2_role2: "QA Testing",
+            emp_prof2_role3: "Análisis de datos",
+            emp_prof3_title: "Perfil Estabilizador",
+            emp_prof3_desc: "Profesionales con fortaleza en <strong>control de calidad, logística y procesos</strong>. Su consistencia, fiabilidad y capacidad para mantener estándares elevados los convierten en pilares fundamentales de las operaciones industriales.",
+            emp_prof3_sector: "<em>Sector objetivo: clúster cerámico, logístico e industrial de Castellón y la Plana Baixa.</em>",
+            emp_prof3_role1: "Control de calidad",
+            emp_prof3_role2: "Logística",
+            emp_prof3_role3: "Procesos industriales",
+
+            // -- empresas.html: process steps --
+            emp_step1_title: "Contacto inicial",
+            emp_step1_desc: "Nos cuentas qué necesitas: qué perfil buscas, qué retos tiene tu equipo y qué nivel de madurez tiene tu organización en materia de inclusión. Sin compromiso.",
+            emp_step2_title: "Análisis de necesidades",
+            emp_step2_desc: "Evaluamos tu entorno de trabajo, cultura de equipo y requisitos del puesto. Identificamos ajustes necesarios para garantizar una incorporación exitosa.",
+            emp_step3_title: "Matching talento-empresa",
+            emp_step3_desc: "Seleccionamos candidatos cuyo perfil, fortalezas y estilo de trabajo encajan con tu organización. No se trata solo de habilidades técnicas, sino de compatibilidad real.",
+            emp_step4_title: "Acompañamiento y seguimiento",
+            emp_step4_desc: "Una vez incorporada la persona, proporcionamos mediación y seguimiento continuo durante los primeros meses. Resolvemos fricciones antes de que se conviertan en problemas.",
+
+            // -- empresas.html: service tiers --
+            emp_tier1_label: "Startups &lt;50 empleados",
+            emp_tier1_title: "Kit de Diseño de Cultura Inclusiva",
+            emp_tier1_desc: "Intervención ágil de <strong>2-3 semanas</strong> para startups que quieren incorporar la inclusión desde el principio. Incluye diagnóstico rápido, guía de buenas prácticas y sesión de sensibilización para el equipo fundador.",
+            emp_tier2_label: "Medianas 51-250 empleados",
+            emp_tier2_title: "Programa de Cohesión y Adaptación Mutua",
+            emp_tier2_desc: "Programa de <strong>3-4 meses</strong> que trabaja la cultura organizacional en profundidad. Incluye diagnóstico, formación de mandos intermedios, acompañamiento en incorporaciones y medición de impacto con indicadores de seguridad psicológica y retención.",
+            emp_tier3_label: "Grandes +250 empleados",
+            emp_tier3_title: "Auditoría Forense de RRHH y Cumplimiento Normativo",
+            emp_tier3_desc: "Revisión exhaustiva del cumplimiento de la <strong>LGD</strong> (cuota del 2%), la <strong>ISO 45003</strong> (riesgos psicosociales) y criterios <strong>ESG</strong> relacionados con diversidad. Informe con hallazgos, riesgos legales y plan de acción priorizado.",
+
+            // -- empresas.html: page CTA --
+            emp_cta_title: "Potencia tu equipo con talento divergente",
+            emp_cta_desc: "Cuéntanos qué necesita tu empresa. Te propondremos un plan a medida sin compromiso.",
+
+            // -- neurodiversidad.html: type stat cards --
+            neuro_type1_title: "Autismo (TEA)",
+            neuro_type1_desc: "Afecta a 1 de cada 100 personas. Se caracteriza por un pensamiento sistemático, atención excepcional al detalle, honestidad directa y capacidad de hiperfoco en áreas de interés.",
+            neuro_type2_title: "TDAH",
+            neuro_type2_desc: "Presente en un 5-7% de la población. Aporta creatividad, pensamiento rápido, capacidad para trabajar bajo presión, energía y habilidad para conectar ideas aparentemente inconexas.",
+            neuro_type3_title: "Dislexia",
+            neuro_type3_desc: "Afecta al 10% de la población. Las personas disléxicas destacan por su pensamiento espacial y visual, creatividad, capacidad narrativa y visión global de los problemas.",
+            neuro_type4_title: "Altas Capacidades",
+            neuro_type4_desc: "Presente en un 2-5% de la población. Se caracterizan por un aprendizaje rápido, pensamiento crítico, alta sensibilidad, capacidad de abstracción y visión estratégica.",
+
+            // -- neurodiversidad.html: strengths service cards --
+            neuro_str1_title: "Autismo",
+            neuro_str1_li1: "Detección de errores y patrones",
+            neuro_str1_li2: "Consistencia y fiabilidad",
+            neuro_str1_li3: "Análisis sistemático de datos",
+            neuro_str1_li4: "Concentración profunda sostenida",
+            neuro_str1_li5: "Comunicación honesta y directa",
+            neuro_str2_title: "TDAH",
+            neuro_str2_li1: "Creatividad e ideación rápida",
+            neuro_str2_li2: "Capacidad multitarea en entornos dinámicos",
+            neuro_str2_li3: "Pensamiento lateral e innovador",
+            neuro_str2_li4: "Alto rendimiento bajo presión",
+            neuro_str2_li5: "Hiperfoco en proyectos motivantes",
+            neuro_str3_title: "Altas Capacidades",
+            neuro_str3_li1: "Aprendizaje acelerado",
+            neuro_str3_li2: "Visión estratégica y pensamiento crítico",
+            neuro_str3_li3: "Conexión de ideas complejas",
+            neuro_str3_li4: "Liderazgo intelectual",
+            neuro_str3_li5: "Resolución creativa de problemas",
+
+            // -- neurodiversidad.html: FAQ --
+            neuro_faq1_q: "¿Las personas neurodivergentes necesitan adaptaciones especiales en el trabajo?",
+            neuro_faq1_a: "No siempre. Muchas veces se trata de ajustes sencillos y de bajo coste: reducir estímulos sensoriales innecesarios, ofrecer instrucciones claras por escrito, permitir auriculares con cancelación de ruido o flexibilizar horarios. Estos ajustes, además, suelen beneficiar a todo el equipo, no solo a la persona neurodivergente.",
+            neuro_faq2_q: "¿Contratar talento neurodivergente es solo una cuestión de RSC?",
+            neuro_faq2_a: "No. Es una decisión empresarial basada en datos. Empresas como SAP, Microsoft, JP Morgan y EY han demostrado que los equipos neurodiversos son más productivos, más innovadores y cometen menos errores en tareas que requieren precisión. La neurodiversidad bien gestionada genera retorno de inversión medible.",
+            neuro_faq3_q: "¿Cómo afecta la neurodiversidad a la dinámica de equipo?",
+            neuro_faq3_a: "Un equipo cognitivamente diverso analiza los problemas desde múltiples perspectivas, lo que reduce el pensamiento grupal y mejora la toma de decisiones. La clave está en la gestión: con la mediación adecuada, las diferencias se convierten en complementariedad. Sin ella, pueden generar fricciones. Por eso ofrecemos acompañamiento continuo.",
+            neuro_faq4_q: "¿Qué obligaciones legales tienen las empresas respecto a la neurodiversidad?",
+            neuro_faq4_a: "En España, la Ley General de Discapacidad (LGD) establece una cuota del 2% para empresas de más de 50 trabajadores. Además, la ISO 45003 regula los riesgos psicosociales y los criterios ESG cada vez valoran más la diversidad e inclusión. No cumplir puede suponer sanciones, pero más allá de la obligación legal, gestionar bien la neurodiversidad es una ventaja competitiva."
         },
         en: {
             // -- Shared / Nav / Footer --
@@ -274,8 +373,6 @@ document.addEventListener('DOMContentLoaded', () => {
             hero_desc: "We transform neurodivergence into your company's competitive advantage. We connect extraordinary minds with teams seeking innovative results.",
             hero_btn_discover: "Discover how",
             hero_btn_about: "Learn more",
-            stat_people: "People Supported",
-            stat_companies: "Partner Companies",
             node_talent: "Talent",
             node_company: "Company",
 
@@ -335,10 +432,10 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_form_subject_collab: "Collaboration proposal",
             contact_form_subject_other: "Other",
             contact_form_message: "Message",
-            contact_form_privacy: "I have read and accept the <a href=\"politica-privacidad.html\">Privacy Policy</a>",
+            contact_form_privacy: "I have read and accept the <a href=\"/politica-privacidad\">Privacy Policy</a>",
             contact_form_submit: "Send message",
             contact_form_sending: "Sending...",
-            contact_form_success: "Message sent successfully. We will get back to you soon.",
+            contact_form_success: "We have received your message. We'll get back to you as soon as possible.",
             contact_form_error: "There was an error. Please try again or email us directly at contacto@fundaciontalentodivergente.org",
 
             // -- quienes-somos.html --
@@ -472,20 +569,20 @@ document.addEventListener('DOMContentLoaded', () => {
             privacy_s5_aepd: "The user also has the right to lodge a complaint with the Spanish Data Protection Agency (<a href=\"https://www.aepd.es\" target=\"_blank\" rel=\"noopener\">www.aepd.es</a>) if they consider that the processing of their data does not comply with current regulations.",
             privacy_s6_title: "6. Cookies",
             privacy_s6_intro: "This website uses the following types of cookies:",
-            privacy_s6_list: "<li><strong>Technical cookies (strictly necessary):</strong> enable the proper functioning of the website. They do not collect identifiable personal data and are deleted when the browser is closed.</li><li><strong>Analytical cookies (Google Analytics):</strong> collect anonymous information about website usage (pages visited, visit duration, traffic source). These cookies are only activated if the user expressly accepts them through the consent banner. The service provider is Google LLC. You can review their privacy policy at <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">policies.google.com/privacy</a>.</li>",
-            privacy_s6_text: "The user can accept or reject analytical cookies through the banner displayed on their first visit. The preference is stored in the browser (localStorage) and can be changed at any time by clearing the site data in the browser settings.",
+            privacy_s6_list: "<li><strong>Technical cookies (strictly necessary):</strong> enable the proper functioning of the website. They do not collect identifiable personal data and are deleted when the browser is closed.</li><li><strong>Analytical cookies (Google Analytics):</strong> collect <strong>pseudonymised and aggregated</strong> information about website usage (pages visited, visit duration, traffic source). These cookies are only activated if the user expressly accepts them through the consent banner. The service provider is Google LLC. You can review their privacy policy at <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">policies.google.com/privacy</a>. Processing is carried out by Google LLC, which may involve data transfers to the United States (see section 8).</li>",
+            privacy_s6_text: "The user can accept or reject analytical cookies through the banner displayed on their first visit. The preference is stored in the browser (localStorage) and can be changed at any time by clearing the site data in the browser settings. You can also withdraw your consent at any time using the «Cookie settings» button available in the page footer.",
             privacy_s7_title: "7. Data retention period",
             privacy_s7_intro: "Personal data provided will be retained for the time necessary to respond to the user's request or query and, where applicable, for the legally established periods. Once the purpose of the processing has been fulfilled, the data will be securely deleted or, where applicable, blocked in accordance with applicable regulations.",
             privacy_s7_detail: "In particular:",
             privacy_s7_list: "<li>Data from email or form queries: retained for the time necessary to resolve the query and a maximum of 12 additional months.</li><li>Data from professional relationships: for the duration of the relationship and the applicable legal limitation periods.</li>",
             privacy_s8_title: "8. Data recipients",
-            privacy_s8_text: "Personal data will not be disclosed to third parties except where required by law. No international data transfers are made outside the European Economic Area.",
+            privacy_s8_text: "For the provision of certain services, the Foundation uses technology providers acting as data processors: <strong>Google LLC</strong> (hosting of the contact form via Google Apps Script and web analytics via Google Analytics). These providers may process data on servers located in the <strong>United States</strong>, resulting in international data transfers covered by the <strong>EU-US Data Privacy Framework</strong> adequacy decision and/or the Standard Contractual Clauses approved by the European Commission. Except for the use of these processors and legally required disclosures, data will not be shared with third parties.",
             privacy_s9_title: "9. Security",
             privacy_s9_text: "The Foundation has adopted the necessary technical and organisational measures to guarantee the security of personal data and prevent its alteration, loss, processing, or unauthorised access, taking into account the state of technology, the nature of the data stored, and the risks to which it is exposed.",
             privacy_s10_title: "10. Contact",
             privacy_s10_intro: "For any matter related to the processing of your personal data or the exercise of your rights, you may contact us at:",
             privacy_s10_list: "<li><strong>Email:</strong> <a href=\"mailto:contacto@fundaciontalentodivergente.org\">contacto@fundaciontalentodivergente.org</a></li><li><strong>Postal address:</strong> Fundación de la Comunitat Valenciana Talento Divergente, Calle Torremolinos 35, bajo C, CP 12593, Moncofa, Castellón, Spain</li>",
-            privacy_update: "<em>Last updated: March 2026.</em>",
+            privacy_update: "<em>Last updated: June 2026.</em>",
             page_legal_title: "Legal Notice | Talento Divergente",
             page_legal_heading: "Legal Notice",
             breadcrumb_legal: "Legal Notice",
@@ -493,7 +590,105 @@ document.addEventListener('DOMContentLoaded', () => {
             // -- politica-privacidad.html --
             page_privacy_title: "Privacy Policy | Talento Divergente",
             page_privacy_heading: "Privacy Policy",
-            breadcrumb_privacy: "Privacy Policy"
+            breadcrumb_privacy: "Privacy Policy",
+
+            // -- Global: skip link + form privacy notice --
+            skip_link: "Skip to content",
+            form_privacy_notice: "Data controller: Fundación de la Comunitat Valenciana Talento Divergente. Purpose: to handle your enquiry. Legal basis: your consent. Data is not shared except where legally required; processors (Google) are used, with transfers to the USA covered by the EU-US Data Privacy Framework. Rights: access, rectification, erasure and others, by writing to contacto@fundaciontalentodivergente.org. More information in the Privacy Policy.",
+
+            // -- empresas.html: business-case stat cards --
+            emp_stat1_title: "Innovation",
+            emp_stat1_desc: "Divergent thinking generates solutions that homogeneous teams cannot reach. Fresh perspectives for complex problems.",
+            emp_stat2_title: "Attention to detail",
+            emp_stat2_desc: "Exceptional ability to detect errors, patterns, and anomalies in data, code, and quality processes.",
+            emp_stat3_title: "Analytical thinking",
+            emp_stat3_desc: "Logical and systematic reasoning that brings rigour to decision-making and technical problem-solving.",
+
+            // -- empresas.html: profile cards --
+            emp_prof1_title: "Creative Profile",
+            emp_prof1_desc: "Professionals with exceptional talent in <strong>3D Animation, VFX, UX/UI</strong> and digital design. Their ability to visualise complex solutions and their obsessive attention to detail make them high-value assets for the creative industry.",
+            emp_prof1_sector: "<em>Target sector: animation, gaming, and VFX industry in the Valencia-Alicante corridor.</em>",
+            emp_prof1_role1: "3D Animation",
+            emp_prof1_role2: "VFX",
+            emp_prof1_role3: "UX/UI",
+            emp_prof1_role4: "Digital design",
+            emp_prof2_title: "Analytical Profile",
+            emp_prof2_desc: "Specialists in <strong>cybersecurity, QA (testing), and data analysis</strong>. Their systematic thinking, ability to detect anomalies, and resistance to cognitive fatigue in repetitive tasks make them ideal for roles where precision is critical.",
+            emp_prof2_sector: "<em>Target sector: startup and tech ecosystem in the Valencia hub.</em>",
+            emp_prof2_role1: "Cybersecurity",
+            emp_prof2_role2: "QA Testing",
+            emp_prof2_role3: "Data analysis",
+            emp_prof3_title: "Stabiliser Profile",
+            emp_prof3_desc: "Professionals with strengths in <strong>quality control, logistics, and processes</strong>. Their consistency, reliability, and ability to maintain high standards make them fundamental pillars of industrial operations.",
+            emp_prof3_sector: "<em>Target sector: ceramic, logistics, and industrial cluster of Castellón and la Plana Baixa.</em>",
+            emp_prof3_role1: "Quality control",
+            emp_prof3_role2: "Logistics",
+            emp_prof3_role3: "Industrial processes",
+
+            // -- empresas.html: process steps --
+            emp_step1_title: "Initial contact",
+            emp_step1_desc: "Tell us what you need: what profile you are looking for, what challenges your team faces, and how mature your organisation is in terms of inclusion. No commitment required.",
+            emp_step2_title: "Needs analysis",
+            emp_step2_desc: "We evaluate your work environment, team culture, and role requirements. We identify the adjustments needed to ensure a successful onboarding.",
+            emp_step3_title: "Talent-company matching",
+            emp_step3_desc: "We select candidates whose profile, strengths, and working style fit your organisation. It is not just about technical skills, but real compatibility.",
+            emp_step4_title: "Support and follow-up",
+            emp_step4_desc: "Once the person joins, we provide mediation and ongoing support during the first months. We resolve friction before it becomes a problem.",
+
+            // -- empresas.html: service tiers --
+            emp_tier1_label: "Startups &lt;50 employees",
+            emp_tier1_title: "Inclusive Culture Design Kit",
+            emp_tier1_desc: "Agile <strong>2-3 week</strong> intervention for startups that want to embed inclusion from the outset. Includes a rapid assessment, best-practice guide, and awareness session for the founding team.",
+            emp_tier2_label: "Medium 51-250 employees",
+            emp_tier2_title: "Cohesion and Mutual Adaptation Programme",
+            emp_tier2_desc: "<strong>3-4 month</strong> programme that works on organisational culture in depth. Includes assessment, middle-management training, onboarding support, and impact measurement with psychological safety and retention indicators.",
+            emp_tier3_label: "Large +250 employees",
+            emp_tier3_title: "HR Forensic Audit and Regulatory Compliance",
+            emp_tier3_desc: "Comprehensive review of compliance with the <strong>LGD</strong> (2% quota), <strong>ISO 45003</strong> (psychosocial risks), and <strong>ESG</strong> criteria related to diversity. Report with findings, legal risks, and prioritised action plan.",
+
+            // -- empresas.html: page CTA --
+            emp_cta_title: "Power up your team with divergent talent",
+            emp_cta_desc: "Tell us what your company needs. We will propose a tailored plan with no commitment.",
+
+            // -- neurodiversidad.html: type stat cards --
+            neuro_type1_title: "Autism (ASD)",
+            neuro_type1_desc: "Affects 1 in 100 people. Characterised by systematic thinking, exceptional attention to detail, direct honesty, and the ability to hyperfocus on areas of interest.",
+            neuro_type2_title: "ADHD",
+            neuro_type2_desc: "Present in 5-7% of the population. Brings creativity, rapid thinking, the ability to work under pressure, energy, and the skill to connect seemingly unrelated ideas.",
+            neuro_type3_title: "Dyslexia",
+            neuro_type3_desc: "Affects 10% of the population. Dyslexic individuals stand out for their spatial and visual thinking, creativity, narrative ability, and a global view of problems.",
+            neuro_type4_title: "High Abilities",
+            neuro_type4_desc: "Present in 2-5% of the population. Characterised by rapid learning, critical thinking, high sensitivity, capacity for abstraction, and strategic vision.",
+
+            // -- neurodiversidad.html: strengths service cards --
+            neuro_str1_title: "Autism",
+            neuro_str1_li1: "Error and pattern detection",
+            neuro_str1_li2: "Consistency and reliability",
+            neuro_str1_li3: "Systematic data analysis",
+            neuro_str1_li4: "Sustained deep concentration",
+            neuro_str1_li5: "Honest and direct communication",
+            neuro_str2_title: "ADHD",
+            neuro_str2_li1: "Creativity and rapid ideation",
+            neuro_str2_li2: "Multitasking ability in dynamic environments",
+            neuro_str2_li3: "Lateral and innovative thinking",
+            neuro_str2_li4: "High performance under pressure",
+            neuro_str2_li5: "Hyperfocus on motivating projects",
+            neuro_str3_title: "High Abilities",
+            neuro_str3_li1: "Accelerated learning",
+            neuro_str3_li2: "Strategic vision and critical thinking",
+            neuro_str3_li3: "Connecting complex ideas",
+            neuro_str3_li4: "Intellectual leadership",
+            neuro_str3_li5: "Creative problem-solving",
+
+            // -- neurodiversidad.html: FAQ --
+            neuro_faq1_q: "Do neurodivergent people need special adaptations at work?",
+            neuro_faq1_a: "Not always. Many times it involves simple, low-cost adjustments: reducing unnecessary sensory stimuli, providing clear written instructions, allowing noise-cancelling headphones, or offering flexible schedules. These adjustments also tend to benefit the whole team, not just the neurodivergent person.",
+            neuro_faq2_q: "Is hiring neurodivergent talent just a matter of CSR?",
+            neuro_faq2_a: "No. It is a data-driven business decision. Companies such as SAP, Microsoft, JP Morgan, and EY have demonstrated that neurodiverse teams are more productive, more innovative, and make fewer errors in tasks requiring precision. Well-managed neurodiversity generates measurable return on investment.",
+            neuro_faq3_q: "How does neurodiversity affect team dynamics?",
+            neuro_faq3_a: "A cognitively diverse team analyses problems from multiple perspectives, which reduces groupthink and improves decision-making. The key lies in management: with the right mediation, differences become complementarity. Without it, they can generate friction. That is why we offer ongoing support.",
+            neuro_faq4_q: "What legal obligations do companies have regarding neurodiversity?",
+            neuro_faq4_a: "In Spain, the General Disability Law (LGD) sets a 2% quota for companies with more than 50 workers. ISO 45003 also regulates psychosocial risks, and ESG criteria increasingly value diversity and inclusion. Non-compliance can result in penalties, but beyond the legal obligation, managing neurodiversity well is a competitive advantage."
         }
     };
 
@@ -537,12 +732,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update lang attribute on html
         document.documentElement.lang = lang === 'en' ? 'en' : 'es';
 
-        // Update active state in all switchers
+        // Update active state and aria-pressed in all switchers
         document.querySelectorAll('.lang-btn').forEach(function(btn) {
-            if (btn.getAttribute('data-lang') === lang) {
+            var isActive = btn.getAttribute('data-lang') === lang;
+            if (isActive) {
                 btn.classList.add('active');
+                btn.setAttribute('aria-pressed', 'true');
             } else {
                 btn.classList.remove('active');
+                btn.setAttribute('aria-pressed', 'false');
             }
         });
 
@@ -560,20 +758,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Apply stored language on load
+    // Apply stored language on load (always call setLanguage to sync aria-pressed)
     var currentLang = detectLang();
-    if (currentLang !== 'es') {
-        setLanguage(currentLang);
-    } else {
-        // Still update buttons for es
-        document.querySelectorAll('.lang-btn').forEach(function(btn) {
-            if (btn.getAttribute('data-lang') === 'es') {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
-        });
-    }
+    setLanguage(currentLang);
 
     // ========================================
     // CONTACT FORM
@@ -582,6 +769,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
+
+            // Honeypot: abort silently if the hidden field is filled
+            var honeypot = contactForm.querySelector('[name="website"]');
+            if (honeypot && honeypot.value) {
+                return;
+            }
 
             var submitBtn = contactForm.querySelector('button[type="submit"]');
             var statusEl = document.getElementById('form-status');
@@ -707,19 +900,51 @@ document.addEventListener('DOMContentLoaded', () => {
     var mobileMenu = document.getElementById('mobile-menu');
     var mobileLinks = document.querySelectorAll('.mobile-links a');
 
+    function openMobileMenu() {
+        mobileToggle.classList.add('active');
+        mobileMenu.classList.add('active');
+        mobileToggle.setAttribute('aria-expanded', 'true');
+        mobileToggle.setAttribute('aria-label', 'Cerrar menú');
+        document.body.style.overflow = 'hidden';
+        // Move focus to the first link in the menu
+        var firstLink = mobileMenu.querySelector('a, button');
+        if (firstLink) { firstLink.focus(); }
+    }
+
+    function closeMobileMenu() {
+        mobileToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.setAttribute('aria-label', 'Abrir menú');
+        document.body.style.overflow = '';
+        mobileToggle.focus();
+    }
+
     if (mobileToggle && mobileMenu) {
+        // Ensure initial ARIA state
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.setAttribute('aria-controls', 'mobile-menu');
+
         mobileToggle.addEventListener('click', function() {
-            mobileToggle.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            var isOpen = mobileMenu.classList.contains('active');
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
         });
 
         mobileLinks.forEach(function(link) {
             link.addEventListener('click', function() {
-                mobileToggle.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = '';
+                closeMobileMenu();
             });
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
         });
     }
 
@@ -738,31 +963,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ========================================
     // INTERSECTION OBSERVER FOR ANIMATIONS
+    // Only animate when JS is active AND user has no reduced-motion preference
     // ========================================
-    var observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-                observer.unobserve(entry.target);
-            }
+    if (!prefersReducedMotion) {
+        var observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        var cards = document.querySelectorAll('.service-card, .glass-card, .split-content, .stat-card, .profile-card, .step-item, .service-detail-card');
+        cards.forEach(function(card) {
+            card.setAttribute('data-animate', '');
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(card);
         });
-    }, observerOptions);
 
-    var cards = document.querySelectorAll('.service-card, .glass-card, .split-content, .stat-card, .profile-card, .step-item, .service-detail-card');
-    cards.forEach(function(card) {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        observer.observe(card);
-    });
-
-    var style = document.createElement('style');
-    style.textContent = '.animate-in { opacity: 1 !important; transform: translateY(0) !important; }';
-    document.head.appendChild(style);
+        var style = document.createElement('style');
+        style.textContent = '.animate-in { opacity: 1 !important; transform: translateY(0) !important; }';
+        document.head.appendChild(style);
+    }
 });

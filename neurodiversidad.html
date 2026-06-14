@@ -10,11 +10,6 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://fundaciontalentodivergente.org/neurodiversidad">
 
-    <!-- Hreflang -->
-    <link rel="alternate" hreflang="es" href="https://fundaciontalentodivergente.org/neurodiversidad">
-    <link rel="alternate" hreflang="en" href="https://fundaciontalentodivergente.org/neurodiversidad?lang=en">
-    <link rel="alternate" hreflang="x-default" href="https://fundaciontalentodivergente.org/neurodiversidad">
-
     <!-- Open Graph -->
     <meta property="og:title" content="Neurodiversidad | Talento Divergente">
     <meta property="og:description" content="Qué es la neurodiversidad, qué tipos existen y por qué es una ventaja competitiva en el entorno laboral.">
@@ -22,7 +17,6 @@
     <meta property="og:url" content="https://fundaciontalentodivergente.org/neurodiversidad">
     <meta property="og:site_name" content="Fundación Talento Divergente">
     <meta property="og:locale" content="es_ES">
-    <meta property="og:locale:alternate" content="en_US">
     <meta property="og:image" content="https://fundaciontalentodivergente.org/assets/logo.png">
 
     <!-- Twitter Card -->
@@ -97,11 +91,15 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar" id="navbar">
+    <!-- G1: Skip link -->
+    <a href="#main" class="skip-link" data-i18n="skip_link">Saltar al contenido</a>
+
+    <!-- G8: aria-label en navbar -->
+    <nav class="navbar" id="navbar" aria-label="Navegación principal">
         <div class="container nav-container">
             <a href="/" class="logo">
-                <img src="assets/logo.png" alt="Talento Divergente" class="logo-img">
+                <!-- G4: dimensiones en logo -->
+                <img src="assets/logo.png" alt="Talento Divergente" class="logo-img" width="835" height="302">
             </a>
 
             <ul class="nav-links">
@@ -114,12 +112,14 @@
 
             <div class="nav-actions">
                 <div class="lang-switcher">
-                    <button class="lang-btn active" data-lang="es">ES</button>
+                    <!-- G7: aria-pressed en lang-btn -->
+                    <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
                     <span class="lang-divider">|</span>
-                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
                 </div>
                 <a href="/#contacto" class="btn btn-primary" data-i18n="nav_cta">Únete a Nosotros</a>
-                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú">
+                <!-- G6: aria-expanded + aria-controls en mobile-toggle -->
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -139,8 +139,9 @@
             <li><a href="/#contacto" class="btn btn-primary" data-i18n="nav_cta">Únete a Nosotros</a></li>
         </ul>
         <div class="mobile-lang-switcher">
-            <button class="lang-btn active" data-lang="es">Español</button>
-            <button class="lang-btn" data-lang="en">English</button>
+            <!-- G7: aria-pressed en lang-btn del menú móvil -->
+            <button class="lang-btn active" data-lang="es" aria-pressed="true">Español</button>
+            <button class="lang-btn" data-lang="en" aria-pressed="false">English</button>
         </div>
     </div>
 
@@ -148,7 +149,8 @@
     <header class="page-hero">
         <div class="container">
             <h1 data-i18n="page_neuro_heading">Neurodiversidad: Ventaja Competitiva en el Trabajo</h1>
-            <nav class="breadcrumbs">
+            <!-- G8: aria-label en breadcrumbs -->
+            <nav class="breadcrumbs" aria-label="Migas de pan">
                 <a href="/" data-i18n="breadcrumb_home">Inicio</a>
                 <span>/</span>
                 <span data-i18n="breadcrumb_neuro">Neurodiversidad</span>
@@ -156,8 +158,8 @@
         </div>
     </header>
 
-    <!-- Content -->
-    <main class="content-body">
+    <!-- G1: id="main" + tabindex="-1" en main -->
+    <main class="content-body" id="main" tabindex="-1">
         <!-- Definition -->
         <section class="content-section section">
             <div class="container container-narrow">
@@ -184,24 +186,25 @@
 
                 <div class="stats-grid stats-grid-2col">
                     <div class="stat-card">
-                        <div class="stat-icon">🧩</div>
-                        <h3>Autismo (TEA)</h3>
-                        <p>Afecta a 1 de cada 100 personas. Se caracteriza por un pensamiento sistemático, atención excepcional al detalle, honestidad directa y capacidad de hiperfoco en áreas de interés.</p>
+                        <!-- G3: aria-hidden en emoji decorativo -->
+                        <div class="stat-icon" aria-hidden="true">🧩</div>
+                        <h3 data-i18n="neuro_type1_title">Autismo (TEA)</h3>
+                        <p data-i18n="neuro_type1_desc">Afecta a 1 de cada 100 personas. Se caracteriza por un pensamiento sistemático, atención excepcional al detalle, honestidad directa y capacidad de hiperfoco en áreas de interés.</p>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon">⚡</div>
-                        <h3>TDAH</h3>
-                        <p>Presente en un 5-7% de la población. Aporta creatividad, pensamiento rápido, capacidad para trabajar bajo presión, energía y habilidad para conectar ideas aparentemente inconexas.</p>
+                        <div class="stat-icon" aria-hidden="true">⚡</div>
+                        <h3 data-i18n="neuro_type2_title">TDAH</h3>
+                        <p data-i18n="neuro_type2_desc">Presente en un 5-7% de la población. Aporta creatividad, pensamiento rápido, capacidad para trabajar bajo presión, energía y habilidad para conectar ideas aparentemente inconexas.</p>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon">📖</div>
-                        <h3>Dislexia</h3>
-                        <p>Afecta al 10% de la población. Las personas disléxicas destacan por su pensamiento espacial y visual, creatividad, capacidad narrativa y visión global de los problemas.</p>
+                        <div class="stat-icon" aria-hidden="true">📖</div>
+                        <h3 data-i18n="neuro_type3_title">Dislexia</h3>
+                        <p data-i18n="neuro_type3_desc">Afecta al 10% de la población. Las personas disléxicas destacan por su pensamiento espacial y visual, creatividad, capacidad narrativa y visión global de los problemas.</p>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon">💡</div>
-                        <h3>Altas Capacidades</h3>
-                        <p>Presente en un 2-5% de la población. Se caracterizan por un aprendizaje rápido, pensamiento crítico, alta sensibilidad, capacidad de abstracción y visión estratégica.</p>
+                        <div class="stat-icon" aria-hidden="true">💡</div>
+                        <h3 data-i18n="neuro_type4_title">Altas Capacidades</h3>
+                        <p data-i18n="neuro_type4_desc">Presente en un 2-5% de la población. Se caracterizan por un aprendizaje rápido, pensamiento crítico, alta sensibilidad, capacidad de abstracción y visión estratégica.</p>
                     </div>
                 </div>
             </div>
@@ -218,41 +221,42 @@
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-icon">
-                            <span class="emoji-icon">🧩</span>
+                            <!-- G3: aria-hidden en emoji decorativo -->
+                            <span class="emoji-icon" aria-hidden="true">🧩</span>
                         </div>
-                        <h3 class="service-title">Autismo</h3>
+                        <h3 class="service-title" data-i18n="neuro_str1_title">Autismo</h3>
                         <ul class="service-features">
-                            <li>Detección de errores y patrones</li>
-                            <li>Consistencia y fiabilidad</li>
-                            <li>Análisis sistemático de datos</li>
-                            <li>Concentración profunda sostenida</li>
-                            <li>Comunicación honesta y directa</li>
+                            <li data-i18n="neuro_str1_li1">Detección de errores y patrones</li>
+                            <li data-i18n="neuro_str1_li2">Consistencia y fiabilidad</li>
+                            <li data-i18n="neuro_str1_li3">Análisis sistemático de datos</li>
+                            <li data-i18n="neuro_str1_li4">Concentración profunda sostenida</li>
+                            <li data-i18n="neuro_str1_li5">Comunicación honesta y directa</li>
                         </ul>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
-                            <span class="emoji-icon">⚡</span>
+                            <span class="emoji-icon" aria-hidden="true">⚡</span>
                         </div>
-                        <h3 class="service-title">TDAH</h3>
+                        <h3 class="service-title" data-i18n="neuro_str2_title">TDAH</h3>
                         <ul class="service-features">
-                            <li>Creatividad e ideación rápida</li>
-                            <li>Capacidad multitarea en entornos dinámicos</li>
-                            <li>Pensamiento lateral e innovador</li>
-                            <li>Alto rendimiento bajo presión</li>
-                            <li>Hiperfoco en proyectos motivantes</li>
+                            <li data-i18n="neuro_str2_li1">Creatividad e ideación rápida</li>
+                            <li data-i18n="neuro_str2_li2">Capacidad multitarea en entornos dinámicos</li>
+                            <li data-i18n="neuro_str2_li3">Pensamiento lateral e innovador</li>
+                            <li data-i18n="neuro_str2_li4">Alto rendimiento bajo presión</li>
+                            <li data-i18n="neuro_str2_li5">Hiperfoco en proyectos motivantes</li>
                         </ul>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
-                            <span class="emoji-icon">💡</span>
+                            <span class="emoji-icon" aria-hidden="true">💡</span>
                         </div>
-                        <h3 class="service-title">Altas Capacidades</h3>
+                        <h3 class="service-title" data-i18n="neuro_str3_title">Altas Capacidades</h3>
                         <ul class="service-features">
-                            <li>Aprendizaje acelerado</li>
-                            <li>Visión estratégica y pensamiento crítico</li>
-                            <li>Conexión de ideas complejas</li>
-                            <li>Liderazgo intelectual</li>
-                            <li>Resolución creativa de problemas</li>
+                            <li data-i18n="neuro_str3_li1">Aprendizaje acelerado</li>
+                            <li data-i18n="neuro_str3_li2">Visión estratégica y pensamiento crítico</li>
+                            <li data-i18n="neuro_str3_li3">Conexión de ideas complejas</li>
+                            <li data-i18n="neuro_str3_li4">Liderazgo intelectual</li>
+                            <li data-i18n="neuro_str3_li5">Resolución creativa de problemas</li>
                         </ul>
                     </div>
                 </div>
@@ -266,27 +270,27 @@
 
                 <div class="faq-list">
                     <div class="faq-item">
-                        <button class="faq-question">¿Las personas neurodivergentes necesitan adaptaciones especiales en el trabajo?</button>
+                        <button class="faq-question" data-i18n="neuro_faq1_q">¿Las personas neurodivergentes necesitan adaptaciones especiales en el trabajo?</button>
                         <div class="faq-answer">
-                            <p>No siempre. Muchas veces se trata de ajustes sencillos y de bajo coste: reducir estímulos sensoriales innecesarios, ofrecer instrucciones claras por escrito, permitir auriculares con cancelación de ruido o flexibilizar horarios. Estos ajustes, además, suelen beneficiar a todo el equipo, no solo a la persona neurodivergente.</p>
+                            <p data-i18n="neuro_faq1_a">No siempre. Muchas veces se trata de ajustes sencillos y de bajo coste: reducir estímulos sensoriales innecesarios, ofrecer instrucciones claras por escrito, permitir auriculares con cancelación de ruido o flexibilizar horarios. Estos ajustes, además, suelen beneficiar a todo el equipo, no solo a la persona neurodivergente.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question">¿Contratar talento neurodivergente es solo una cuestión de RSC?</button>
+                        <button class="faq-question" data-i18n="neuro_faq2_q">¿Contratar talento neurodivergente es solo una cuestión de RSC?</button>
                         <div class="faq-answer">
-                            <p>No. Es una decisión empresarial basada en datos. Empresas como SAP, Microsoft, JP Morgan y EY han demostrado que los equipos neurodiversos son más productivos, más innovadores y cometen menos errores en tareas que requieren precisión. La neurodiversidad bien gestionada genera retorno de inversión medible.</p>
+                            <p data-i18n="neuro_faq2_a">No. Es una decisión empresarial basada en datos. Empresas como SAP, Microsoft, JP Morgan y EY han demostrado que los equipos neurodiversos son más productivos, más innovadores y cometen menos errores en tareas que requieren precisión. La neurodiversidad bien gestionada genera retorno de inversión medible.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question">¿Cómo afecta la neurodiversidad a la dinámica de equipo?</button>
+                        <button class="faq-question" data-i18n="neuro_faq3_q">¿Cómo afecta la neurodiversidad a la dinámica de equipo?</button>
                         <div class="faq-answer">
-                            <p>Un equipo cognitivamente diverso analiza los problemas desde múltiples perspectivas, lo que reduce el pensamiento grupal y mejora la toma de decisiones. La clave está en la gestión: con la mediación adecuada, las diferencias se convierten en complementariedad. Sin ella, pueden generar fricciones. Por eso ofrecemos acompañamiento continuo.</p>
+                            <p data-i18n="neuro_faq3_a">Un equipo cognitivamente diverso analiza los problemas desde múltiples perspectivas, lo que reduce el pensamiento grupal y mejora la toma de decisiones. La clave está en la gestión: con la mediación adecuada, las diferencias se convierten en complementariedad. Sin ella, pueden generar fricciones. Por eso ofrecemos acompañamiento continuo.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question">¿Qué obligaciones legales tienen las empresas respecto a la neurodiversidad?</button>
+                        <button class="faq-question" data-i18n="neuro_faq4_q">¿Qué obligaciones legales tienen las empresas respecto a la neurodiversidad?</button>
                         <div class="faq-answer">
-                            <p>En España, la Ley General de Discapacidad (LGD) establece una cuota del 2% para empresas de más de 50 trabajadores. Además, la ISO 45003 regula los riesgos psicosociales y los criterios ESG cada vez valoran más la diversidad e inclusión. No cumplir puede suponer sanciones, pero más allá de la obligación legal, gestionar bien la neurodiversidad es una ventaja competitiva.</p>
+                            <p data-i18n="neuro_faq4_a">En España, la Ley General de Discapacidad (LGD) establece una cuota del 2% para empresas de más de 50 trabajadores. Además, la ISO 45003 regula los riesgos psicosociales y los criterios ESG cada vez valoran más la diversidad e inclusión. No cumplir puede suponer sanciones, pero más allá de la obligación legal, gestionar bien la neurodiversidad es una ventaja competitiva.</p>
                         </div>
                     </div>
                 </div>
@@ -299,7 +303,8 @@
         <div class="container footer-container">
             <div class="footer-brand">
                 <a href="/" class="logo footer-logo">
-                    <img src="assets/logo.png" alt="Talento Divergente" class="logo-img">
+                    <!-- G4: dimensiones en logo del footer -->
+                    <img src="assets/logo.png" alt="Talento Divergente" class="logo-img" width="835" height="302">
                 </a>
                 <p class="footer-text" data-i18n="footer_desc">
                     Construyendo puentes entre el talento neurodivergente y empresas preparadas para el futuro.
@@ -326,7 +331,8 @@
                 <h4 class="footer-heading" data-i18n="footer_contact_title">Contacto</h4>
                 <p>contacto@fundaciontalentodivergente.org</p>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/company/fundaci%C3%B3n-talento-divergente/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+                    <!-- G5: SVG LinkedIn accesible -->
+                    <a href="https://www.linkedin.com/company/fundaci%C3%B3n-talento-divergente/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 9.5H5.67V18h2.67V9.5zM7 6a1.55 1.55 0 1 0 0 3.1A1.55 1.55 0 0 0 7 6zm11 5.86c0-2.5-1.6-3.36-3-3.36a2.8 2.8 0 0 0-2.34 1.18V9.5h-2.67V18h2.67v-4.5c0-1.07.46-1.7 1.4-1.7s1.27.64 1.27 1.7V18H18v-6.14z"/></svg></a>
                 </div>
             </div>
         </div>

@@ -10,11 +10,6 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://fundaciontalentodivergente.org/politica-privacidad">
 
-    <!-- Hreflang -->
-    <link rel="alternate" hreflang="es" href="https://fundaciontalentodivergente.org/politica-privacidad">
-    <link rel="alternate" hreflang="en" href="https://fundaciontalentodivergente.org/politica-privacidad?lang=en">
-    <link rel="alternate" hreflang="x-default" href="https://fundaciontalentodivergente.org/politica-privacidad">
-
     <!-- Open Graph -->
     <meta property="og:title" content="Política de Privacidad | Talento Divergente">
     <meta property="og:description" content="Política de privacidad de la Fundación Talento Divergente. Tratamiento de datos personales conforme al RGPD y la LOPDGDD.">
@@ -22,7 +17,6 @@
     <meta property="og:url" content="https://fundaciontalentodivergente.org/politica-privacidad">
     <meta property="og:site_name" content="Fundación Talento Divergente">
     <meta property="og:locale" content="es_ES">
-    <meta property="og:locale:alternate" content="en_US">
     <meta property="og:image" content="https://fundaciontalentodivergente.org/assets/logo.png">
 
     <!-- Twitter Card -->
@@ -57,11 +51,14 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 </head>
 <body>
+    <!-- G1: Skip link -->
+    <a href="#main" class="skip-link" data-i18n="skip_link">Saltar al contenido</a>
+
     <!-- Navbar -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" aria-label="Navegación principal">
         <div class="container nav-container">
             <a href="/" class="logo">
-                <img src="assets/logo.png" alt="Talento Divergente" class="logo-img">
+                <img src="assets/logo.png" alt="Talento Divergente" class="logo-img" width="835" height="302">
             </a>
 
             <ul class="nav-links">
@@ -74,12 +71,12 @@
 
             <div class="nav-actions">
                 <div class="lang-switcher">
-                    <button class="lang-btn active" data-lang="es">ES</button>
+                    <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
                     <span class="lang-divider">|</span>
-                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
                 </div>
                 <a href="/#contacto" class="btn btn-primary" data-i18n="nav_cta">Únete a Nosotros</a>
-                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú">
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -99,8 +96,8 @@
             <li><a href="/#contacto" class="btn btn-primary" data-i18n="nav_cta">Únete a Nosotros</a></li>
         </ul>
         <div class="mobile-lang-switcher">
-            <button class="lang-btn active" data-lang="es">Español</button>
-            <button class="lang-btn" data-lang="en">English</button>
+            <button class="lang-btn active" data-lang="es" aria-pressed="true">Español</button>
+            <button class="lang-btn" data-lang="en" aria-pressed="false">English</button>
         </div>
     </div>
 
@@ -108,7 +105,7 @@
     <header class="page-hero">
         <div class="container">
             <h1 data-i18n="page_privacy_heading">Política de Privacidad</h1>
-            <nav class="breadcrumbs">
+            <nav class="breadcrumbs" aria-label="Migas de pan">
                 <a href="/" data-i18n="breadcrumb_home">Inicio</a>
                 <span>/</span>
                 <span data-i18n="breadcrumb_privacy">Política de Privacidad</span>
@@ -117,7 +114,7 @@
     </header>
 
     <!-- Content -->
-    <main class="content-body">
+    <main class="content-body" id="main" tabindex="-1">
         <section class="content-section section">
             <div class="container">
                 <div class="legal-content">
@@ -164,9 +161,9 @@
                     <p data-i18n="privacy_s6_intro">Este sitio web utiliza los siguientes tipos de cookies:</p>
                     <ul data-i18n="privacy_s6_list">
                         <li><strong>Cookies técnicas (estrictamente necesarias):</strong> permiten el correcto funcionamiento de la página. No recogen datos personales identificables y se eliminan al cerrar el navegador.</li>
-                        <li><strong>Cookies analíticas (Google Analytics):</strong> recogen información anónima sobre el uso del sitio web (páginas visitadas, duración de la visita, origen del tráfico). Estas cookies solo se activan si el usuario acepta expresamente a través del banner de consentimiento. El proveedor de este servicio es Google LLC. Puede consultar su política de privacidad en <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</li>
+                        <li><strong>Cookies analíticas (Google Analytics):</strong> recogen información <strong>seudonimizada y agregada</strong> sobre el uso del sitio web (páginas visitadas, duración de la visita, origen del tráfico). Estas cookies solo se activan si el usuario acepta expresamente a través del banner de consentimiento. El proveedor de este servicio es Google LLC. Puede consultar su política de privacidad en <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>. El tratamiento lo realiza Google LLC, lo que puede implicar transferencia de datos a Estados Unidos (ver apartado 8).</li>
                     </ul>
-                    <p data-i18n="privacy_s6_text">El usuario puede aceptar o rechazar las cookies analíticas a través del banner que se muestra en su primera visita. La preferencia se almacena en el navegador (localStorage) y puede modificarse en cualquier momento borrando los datos del sitio en la configuración del navegador.</p>
+                    <p data-i18n="privacy_s6_text">El usuario puede aceptar o rechazar las cookies analíticas a través del banner que se muestra en su primera visita. La preferencia se almacena en el navegador (localStorage) y puede modificarse en cualquier momento borrando los datos del sitio en la configuración del navegador. También puede revocar su consentimiento en cualquier momento mediante el botón «Configurar cookies» disponible en el pie de página.</p>
 
                     <h2 data-i18n="privacy_s7_title">7. Periodo de conservación</h2>
                     <p data-i18n="privacy_s7_intro">Los datos personales proporcionados se conservarán durante el tiempo necesario para atender la solicitud o consulta del usuario y, en su caso, durante los plazos legalmente establecidos. Una vez cumplida la finalidad del tratamiento, los datos serán suprimidos de forma segura o, en su caso, bloqueados conforme a la normativa aplicable.</p>
@@ -177,7 +174,7 @@
                     </ul>
 
                     <h2 data-i18n="privacy_s8_title">8. Destinatarios de los datos</h2>
-                    <p data-i18n="privacy_s8_text">Los datos personales no serán cedidos a terceros salvo obligación legal. No se realizan transferencias internacionales de datos fuera del Espacio Económico Europeo.</p>
+                    <p data-i18n="privacy_s8_text">Para la prestación de determinados servicios, la Fundación utiliza proveedores tecnológicos que actúan como encargados del tratamiento: <strong>Google LLC</strong> (alojamiento del formulario de contacto mediante Google Apps Script y analítica web mediante Google Analytics). Estos proveedores pueden tratar los datos en servidores ubicados en <strong>Estados Unidos</strong>, por lo que se producen transferencias internacionales de datos, amparadas en el marco de adecuación <strong>EU-US Data Privacy Framework</strong> y/o en las Cláusulas Contractuales Tipo aprobadas por la Comisión Europea. Salvo esta utilización de encargados del tratamiento y las obligaciones legales exigibles, los datos no serán cedidos a terceros.</p>
 
                     <h2 data-i18n="privacy_s9_title">9. Seguridad</h2>
                     <p data-i18n="privacy_s9_text">La Fundación ha adoptado las medidas técnicas y organizativas necesarias para garantizar la seguridad de los datos personales y evitar su alteración, pérdida, tratamiento o acceso no autorizado, habida cuenta del estado de la tecnología, la naturaleza de los datos almacenados y los riesgos a que están expuestos.</p>
@@ -189,7 +186,7 @@
                         <li><strong>Dirección postal:</strong> Fundación de la Comunitat Valenciana Talento Divergente, Calle Torremolinos 35, bajo C, CP 12593, Moncofa, Castellón</li>
                     </ul>
 
-                    <p class="legal-update" data-i18n="privacy_update"><em>Última actualización: marzo de 2026.</em></p>
+                    <p class="legal-update" data-i18n="privacy_update"><em>Última actualización: junio de 2026.</em></p>
                 </div>
             </div>
         </section>
@@ -200,7 +197,7 @@
         <div class="container footer-container">
             <div class="footer-brand">
                 <a href="/" class="logo footer-logo">
-                    <img src="assets/logo.png" alt="Talento Divergente" class="logo-img">
+                    <img src="assets/logo.png" alt="Talento Divergente" class="logo-img" width="835" height="302">
                 </a>
                 <p class="footer-text" data-i18n="footer_desc">
                     Construyendo puentes entre el talento neurodivergente y empresas preparadas para el futuro.
@@ -227,7 +224,7 @@
                 <h4 class="footer-heading" data-i18n="footer_contact_title">Contacto</h4>
                 <p>contacto@fundaciontalentodivergente.org</p>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/company/fundaci%C3%B3n-talento-divergente/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+                    <a href="https://www.linkedin.com/company/fundaci%C3%B3n-talento-divergente/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 9.5H5.67V18h2.67V9.5zM7 6a1.55 1.55 0 1 0 0 3.1A1.55 1.55 0 0 0 7 6zm11 5.86c0-2.5-1.6-3.36-3-3.36a2.8 2.8 0 0 0-2.34 1.18V9.5h-2.67V18h2.67v-4.5c0-1.07.46-1.7 1.4-1.7s1.27.64 1.27 1.7V18H18v-6.14z"/></svg></a>
                 </div>
             </div>
         </div>

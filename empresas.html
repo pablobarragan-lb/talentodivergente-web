@@ -10,11 +10,6 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://fundaciontalentodivergente.org/empresas">
 
-    <!-- Hreflang -->
-    <link rel="alternate" hreflang="es" href="https://fundaciontalentodivergente.org/empresas">
-    <link rel="alternate" hreflang="en" href="https://fundaciontalentodivergente.org/empresas?lang=en">
-    <link rel="alternate" hreflang="x-default" href="https://fundaciontalentodivergente.org/empresas">
-
     <!-- Open Graph -->
     <meta property="og:title" content="Para Empresas | Talento Divergente">
     <meta property="og:description" content="Descubre cómo el talento neurodivergente puede impulsar tu empresa. Perfiles creativos, analíticos y estabilizadores listos para aportar valor.">
@@ -22,7 +17,6 @@
     <meta property="og:url" content="https://fundaciontalentodivergente.org/empresas">
     <meta property="og:site_name" content="Fundación Talento Divergente">
     <meta property="og:locale" content="es_ES">
-    <meta property="og:locale:alternate" content="en_US">
     <meta property="og:image" content="https://fundaciontalentodivergente.org/assets/logo.png">
 
     <!-- Twitter Card -->
@@ -79,11 +73,15 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar" id="navbar">
+    <!-- G1: Skip link -->
+    <a href="#main" class="skip-link" data-i18n="skip_link">Saltar al contenido</a>
+
+    <!-- G8: aria-label en navbar -->
+    <nav class="navbar" id="navbar" aria-label="Navegación principal">
         <div class="container nav-container">
             <a href="/" class="logo">
-                <img src="assets/logo.png" alt="Talento Divergente" class="logo-img">
+                <!-- G4: dimensiones en logo -->
+                <img src="assets/logo.png" alt="Talento Divergente" class="logo-img" width="835" height="302">
             </a>
 
             <ul class="nav-links">
@@ -96,12 +94,14 @@
 
             <div class="nav-actions">
                 <div class="lang-switcher">
-                    <button class="lang-btn active" data-lang="es">ES</button>
+                    <!-- G7: aria-pressed en lang-btn -->
+                    <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
                     <span class="lang-divider">|</span>
-                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
                 </div>
                 <a href="/#contacto" class="btn btn-primary" data-i18n="nav_cta">Únete a Nosotros</a>
-                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú">
+                <!-- G6: aria-expanded + aria-controls en mobile-toggle -->
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -121,8 +121,9 @@
             <li><a href="/#contacto" class="btn btn-primary" data-i18n="nav_cta">Únete a Nosotros</a></li>
         </ul>
         <div class="mobile-lang-switcher">
-            <button class="lang-btn active" data-lang="es">Español</button>
-            <button class="lang-btn" data-lang="en">English</button>
+            <!-- G7: aria-pressed en lang-btn del menú móvil -->
+            <button class="lang-btn active" data-lang="es" aria-pressed="true">Español</button>
+            <button class="lang-btn" data-lang="en" aria-pressed="false">English</button>
         </div>
     </div>
 
@@ -130,7 +131,8 @@
     <header class="page-hero">
         <div class="container">
             <h1 data-i18n="page_companies_heading">Talento Neurodivergente para tu Empresa</h1>
-            <nav class="breadcrumbs">
+            <!-- G8: aria-label en breadcrumbs -->
+            <nav class="breadcrumbs" aria-label="Migas de pan">
                 <a href="/" data-i18n="breadcrumb_home">Inicio</a>
                 <span>/</span>
                 <span data-i18n="breadcrumb_companies">Para Empresas</span>
@@ -138,8 +140,8 @@
         </div>
     </header>
 
-    <!-- Content -->
-    <main class="content-body">
+    <!-- G1: id="main" + tabindex="-1" en el main -->
+    <main class="content-body" id="main" tabindex="-1">
         <!-- Business Case -->
         <section class="content-section section">
             <div class="container container-narrow">
@@ -152,19 +154,20 @@
                 </p>
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <div class="stat-icon">🚀</div>
-                        <h3>Innovación</h3>
-                        <p>El pensamiento divergente genera soluciones que los equipos homogéneos no alcanzan. Nuevas perspectivas para problemas complejos.</p>
+                        <!-- G3: aria-hidden en emoji decorativo -->
+                        <div class="stat-icon" aria-hidden="true">🚀</div>
+                        <h3 data-i18n="emp_stat1_title">Innovación</h3>
+                        <p data-i18n="emp_stat1_desc">El pensamiento divergente genera soluciones que los equipos homogéneos no alcanzan. Nuevas perspectivas para problemas complejos.</p>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon">🔍</div>
-                        <h3>Atención al detalle</h3>
-                        <p>Capacidad excepcional para detectar errores, patrones y anomalías en datos, código y procesos de calidad.</p>
+                        <div class="stat-icon" aria-hidden="true">🔍</div>
+                        <h3 data-i18n="emp_stat2_title">Atención al detalle</h3>
+                        <p data-i18n="emp_stat2_desc">Capacidad excepcional para detectar errores, patrones y anomalías en datos, código y procesos de calidad.</p>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon">📊</div>
-                        <h3>Pensamiento analítico</h3>
-                        <p>Razonamiento lógico y sistemático que aporta rigor en la toma de decisiones y la resolución de problemas técnicos.</p>
+                        <div class="stat-icon" aria-hidden="true">📊</div>
+                        <h3 data-i18n="emp_stat3_title">Pensamiento analítico</h3>
+                        <p data-i18n="emp_stat3_desc">Razonamiento lógico y sistemático que aporta rigor en la toma de decisiones y la resolución de problemas técnicos.</p>
                     </div>
                 </div>
             </div>
@@ -180,34 +183,34 @@
 
                 <div class="profile-grid">
                     <div class="profile-card creative">
-                        <h3>Perfil Creativo</h3>
-                        <p>Profesionales con talento excepcional en <strong>Animación 3D, VFX, UX/UI</strong> y diseño digital. Su capacidad para visualizar soluciones complejas y su atención obsesiva al detalle los convierte en activos de alto valor para la industria creativa.</p>
-                        <p><em>Sector objetivo: industria de animación, gaming y VFX del eje Valencia-Alicante.</em></p>
+                        <h3 data-i18n="emp_prof1_title">Perfil Creativo</h3>
+                        <p data-i18n="emp_prof1_desc">Profesionales con talento excepcional en <strong>Animación 3D, VFX, UX/UI</strong> y diseño digital. Su capacidad para visualizar soluciones complejas y su atención obsesiva al detalle los convierte en activos de alto valor para la industria creativa.</p>
+                        <p data-i18n="emp_prof1_sector"><em>Sector objetivo: industria de animación, gaming y VFX del eje Valencia-Alicante.</em></p>
                         <div class="profile-roles">
-                            <span class="role-tag">Animación 3D</span>
-                            <span class="role-tag">VFX</span>
-                            <span class="role-tag">UX/UI</span>
-                            <span class="role-tag">Diseño digital</span>
+                            <span class="role-tag" data-i18n="emp_prof1_role1">Animación 3D</span>
+                            <span class="role-tag" data-i18n="emp_prof1_role2">VFX</span>
+                            <span class="role-tag" data-i18n="emp_prof1_role3">UX/UI</span>
+                            <span class="role-tag" data-i18n="emp_prof1_role4">Diseño digital</span>
                         </div>
                     </div>
                     <div class="profile-card analytical">
-                        <h3>Perfil Analítico</h3>
-                        <p>Especialistas en <strong>ciberseguridad, QA (testing) y análisis de datos</strong>. Su pensamiento sistemático, capacidad para detectar anomalías y resistencia a la fatiga cognitiva en tareas repetitivas los hacen ideales para roles donde la precisión es crítica.</p>
-                        <p><em>Sector objetivo: ecosistema startup y tech del hub de Valencia.</em></p>
+                        <h3 data-i18n="emp_prof2_title">Perfil Analítico</h3>
+                        <p data-i18n="emp_prof2_desc">Especialistas en <strong>ciberseguridad, QA (testing) y análisis de datos</strong>. Su pensamiento sistemático, capacidad para detectar anomalías y resistencia a la fatiga cognitiva en tareas repetitivas los hacen ideales para roles donde la precisión es crítica.</p>
+                        <p data-i18n="emp_prof2_sector"><em>Sector objetivo: ecosistema startup y tech del hub de Valencia.</em></p>
                         <div class="profile-roles">
-                            <span class="role-tag">Ciberseguridad</span>
-                            <span class="role-tag">QA Testing</span>
-                            <span class="role-tag">Análisis de datos</span>
+                            <span class="role-tag" data-i18n="emp_prof2_role1">Ciberseguridad</span>
+                            <span class="role-tag" data-i18n="emp_prof2_role2">QA Testing</span>
+                            <span class="role-tag" data-i18n="emp_prof2_role3">Análisis de datos</span>
                         </div>
                     </div>
                     <div class="profile-card stabilizer">
-                        <h3>Perfil Estabilizador</h3>
-                        <p>Profesionales con fortaleza en <strong>control de calidad, logística y procesos</strong>. Su consistencia, fiabilidad y capacidad para mantener estándares elevados los convierten en pilares fundamentales de las operaciones industriales.</p>
-                        <p><em>Sector objetivo: clúster cerámico, logístico e industrial de Castellón y la Plana Baixa.</em></p>
+                        <h3 data-i18n="emp_prof3_title">Perfil Estabilizador</h3>
+                        <p data-i18n="emp_prof3_desc">Profesionales con fortaleza en <strong>control de calidad, logística y procesos</strong>. Su consistencia, fiabilidad y capacidad para mantener estándares elevados los convierten en pilares fundamentales de las operaciones industriales.</p>
+                        <p data-i18n="emp_prof3_sector"><em>Sector objetivo: clúster cerámico, logístico e industrial de Castellón y la Plana Baixa.</em></p>
                         <div class="profile-roles">
-                            <span class="role-tag">Control de calidad</span>
-                            <span class="role-tag">Logística</span>
-                            <span class="role-tag">Procesos industriales</span>
+                            <span class="role-tag" data-i18n="emp_prof3_role1">Control de calidad</span>
+                            <span class="role-tag" data-i18n="emp_prof3_role2">Logística</span>
+                            <span class="role-tag" data-i18n="emp_prof3_role3">Procesos industriales</span>
                         </div>
                     </div>
                 </div>
@@ -226,29 +229,29 @@
                     <div class="step-item">
                         <div class="step-number">1</div>
                         <div class="step-content">
-                            <h3>Contacto inicial</h3>
-                            <p>Nos cuentas qué necesitas: qué perfil buscas, qué retos tiene tu equipo y qué nivel de madurez tiene tu organización en materia de inclusión. Sin compromiso.</p>
+                            <h3 data-i18n="emp_step1_title">Contacto inicial</h3>
+                            <p data-i18n="emp_step1_desc">Nos cuentas qué necesitas: qué perfil buscas, qué retos tiene tu equipo y qué nivel de madurez tiene tu organización en materia de inclusión. Sin compromiso.</p>
                         </div>
                     </div>
                     <div class="step-item">
                         <div class="step-number">2</div>
                         <div class="step-content">
-                            <h3>Análisis de necesidades</h3>
-                            <p>Evaluamos tu entorno de trabajo, cultura de equipo y requisitos del puesto. Identificamos ajustes necesarios para garantizar una incorporación exitosa.</p>
+                            <h3 data-i18n="emp_step2_title">Análisis de necesidades</h3>
+                            <p data-i18n="emp_step2_desc">Evaluamos tu entorno de trabajo, cultura de equipo y requisitos del puesto. Identificamos ajustes necesarios para garantizar una incorporación exitosa.</p>
                         </div>
                     </div>
                     <div class="step-item">
                         <div class="step-number">3</div>
                         <div class="step-content">
-                            <h3>Matching talento-empresa</h3>
-                            <p>Seleccionamos candidatos cuyo perfil, fortalezas y estilo de trabajo encajan con tu organización. No se trata solo de habilidades técnicas, sino de compatibilidad real.</p>
+                            <h3 data-i18n="emp_step3_title">Matching talento-empresa</h3>
+                            <p data-i18n="emp_step3_desc">Seleccionamos candidatos cuyo perfil, fortalezas y estilo de trabajo encajan con tu organización. No se trata solo de habilidades técnicas, sino de compatibilidad real.</p>
                         </div>
                     </div>
                     <div class="step-item">
                         <div class="step-number">4</div>
                         <div class="step-content">
-                            <h3>Acompañamiento y seguimiento</h3>
-                            <p>Una vez incorporada la persona, proporcionamos mediación y seguimiento continuo durante los primeros meses. Resolvemos fricciones antes de que se conviertan en problemas.</p>
+                            <h3 data-i18n="emp_step4_title">Acompañamiento y seguimiento</h3>
+                            <p data-i18n="emp_step4_desc">Una vez incorporada la persona, proporcionamos mediación y seguimiento continuo durante los primeros meses. Resolvemos fricciones antes de que se conviertan en problemas.</p>
                         </div>
                     </div>
                 </div>
@@ -265,19 +268,19 @@
 
                 <div class="service-detail-grid">
                     <div class="service-detail-card">
-                        <span class="tier-label">Startups &lt;50 empleados</span>
-                        <h3>Kit de Diseño de Cultura Inclusiva</h3>
-                        <p>Intervención ágil de <strong>2-3 semanas</strong> para startups que quieren incorporar la inclusión desde el principio. Incluye diagnóstico rápido, guía de buenas prácticas y sesión de sensibilización para el equipo fundador.</p>
+                        <span class="tier-label" data-i18n="emp_tier1_label">Startups &lt;50 empleados</span>
+                        <h3 data-i18n="emp_tier1_title">Kit de Diseño de Cultura Inclusiva</h3>
+                        <p data-i18n="emp_tier1_desc">Intervención ágil de <strong>2-3 semanas</strong> para startups que quieren incorporar la inclusión desde el principio. Incluye diagnóstico rápido, guía de buenas prácticas y sesión de sensibilización para el equipo fundador.</p>
                     </div>
                     <div class="service-detail-card">
-                        <span class="tier-label">Medianas 51-250 empleados</span>
-                        <h3>Programa de Cohesión y Adaptación Mutua</h3>
-                        <p>Programa de <strong>3-4 meses</strong> que trabaja la cultura organizacional en profundidad. Incluye diagnóstico, formación de mandos intermedios, acompañamiento en incorporaciones y medición de impacto con indicadores de seguridad psicológica y retención.</p>
+                        <span class="tier-label" data-i18n="emp_tier2_label">Medianas 51-250 empleados</span>
+                        <h3 data-i18n="emp_tier2_title">Programa de Cohesión y Adaptación Mutua</h3>
+                        <p data-i18n="emp_tier2_desc">Programa de <strong>3-4 meses</strong> que trabaja la cultura organizacional en profundidad. Incluye diagnóstico, formación de mandos intermedios, acompañamiento en incorporaciones y medición de impacto con indicadores de seguridad psicológica y retención.</p>
                     </div>
                     <div class="service-detail-card">
-                        <span class="tier-label">Grandes +250 empleados</span>
-                        <h3>Auditoría Forense de RRHH y Cumplimiento Normativo</h3>
-                        <p>Revisión exhaustiva del cumplimiento de la <strong>LGD</strong> (cuota del 2%), la <strong>ISO 45003</strong> (riesgos psicosociales) y criterios <strong>ESG</strong> relacionados con diversidad. Informe con hallazgos, riesgos legales y plan de acción priorizado.</p>
+                        <span class="tier-label" data-i18n="emp_tier3_label">Grandes +250 empleados</span>
+                        <h3 data-i18n="emp_tier3_title">Auditoría Forense de RRHH y Cumplimiento Normativo</h3>
+                        <p data-i18n="emp_tier3_desc">Revisión exhaustiva del cumplimiento de la <strong>LGD</strong> (cuota del 2%), la <strong>ISO 45003</strong> (riesgos psicosociales) y criterios <strong>ESG</strong> relacionados con diversidad. Informe con hallazgos, riesgos legales y plan de acción priorizado.</p>
                     </div>
                 </div>
             </div>
@@ -286,8 +289,8 @@
         <!-- CTA -->
         <section class="page-cta">
             <div class="container container-narrow">
-                <h2>Potencia tu equipo con talento divergente</h2>
-                <p>Cuéntanos qué necesita tu empresa. Te propondremos un plan a medida sin compromiso.</p>
+                <h2 data-i18n="emp_cta_title">Potencia tu equipo con talento divergente</h2>
+                <p data-i18n="emp_cta_desc">Cuéntanos qué necesita tu empresa. Te propondremos un plan a medida sin compromiso.</p>
                 <a href="/#contacto" class="btn btn-outline-light" data-i18n="emp_cta_btn">Solicitar información</a>
             </div>
         </section>
@@ -298,7 +301,8 @@
         <div class="container footer-container">
             <div class="footer-brand">
                 <a href="/" class="logo footer-logo">
-                    <img src="assets/logo.png" alt="Talento Divergente" class="logo-img">
+                    <!-- G4: dimensiones en logo del footer -->
+                    <img src="assets/logo.png" alt="Talento Divergente" class="logo-img" width="835" height="302">
                 </a>
                 <p class="footer-text" data-i18n="footer_desc">
                     Construyendo puentes entre el talento neurodivergente y empresas preparadas para el futuro.
@@ -325,7 +329,8 @@
                 <h4 class="footer-heading" data-i18n="footer_contact_title">Contacto</h4>
                 <p>contacto@fundaciontalentodivergente.org</p>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/company/fundaci%C3%B3n-talento-divergente/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+                    <!-- G5: SVG LinkedIn accesible -->
+                    <a href="https://www.linkedin.com/company/fundaci%C3%B3n-talento-divergente/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 9.5H5.67V18h2.67V9.5zM7 6a1.55 1.55 0 1 0 0 3.1A1.55 1.55 0 0 0 7 6zm11 5.86c0-2.5-1.6-3.36-3-3.36a2.8 2.8 0 0 0-2.34 1.18V9.5h-2.67V18h2.67v-4.5c0-1.07.46-1.7 1.4-1.7s1.27.64 1.27 1.7V18H18v-6.14z"/></svg></a>
                 </div>
             </div>
         </div>

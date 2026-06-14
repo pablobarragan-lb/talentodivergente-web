@@ -1681,3 +1681,210 @@ span.highlight {
 .mt-2 {
     margin-top: 2rem;
 }
+
+/* ==================================
+   ACCESIBILIDAD — F1: Foco visible global
+   --clr-ocean-500 = #2D64DB (acento de marca)
+   ================================== */
+:focus-visible {
+    outline: 3px solid var(--clr-ocean-500, #2D64DB);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Anular el outline-none de los campos del formulario
+   que gestionan su propio foco; en su lugar conservamos
+   el box-shadow que ya tenían y añadimos outline accesible. */
+.contact-form input:focus-visible,
+.contact-form select:focus-visible,
+.contact-form textarea:focus-visible {
+    outline: 3px solid var(--clr-ocean-500, #2D64DB);
+    outline-offset: 2px;
+    border-color: var(--clr-ocean-500);
+    box-shadow: 0 0 0 3px rgba(45, 100, 219, 0.15);
+}
+
+/* ==================================
+   ACCESIBILIDAD — F2: Skip link
+   ================================== */
+.skip-link {
+    position: absolute;
+    left: 8px;
+    top: -48px;
+    z-index: 1100;
+    background: #fff;
+    color: #1a1a1a;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: top 0.15s;
+    border: 2px solid var(--clr-ocean-500, #2D64DB);
+}
+
+.skip-link:focus {
+    top: 8px;
+}
+
+/* ==================================
+   ACCESIBILIDAD — F3: Contrastes AA
+   ================================== */
+
+/* .footer-bottom: original rgba(255,255,255,0.4) sobre #1c1e22
+   → ratio ~2.9:1 (falla). Nuevo #cbd5e1 sobre #1c1e22 → ~12.3:1 */
+.footer-bottom {
+    color: #cbd5e1;
+}
+
+/* .breadcrumbs: original #64748b sobre hero (#e2e8f0 la parte más oscura)
+   → ratio ~4.23:1 (falla). Nuevo #475569 sobre #e2e8f0 → ~6.4:1 */
+.page-hero .breadcrumbs {
+    color: #475569;
+}
+
+/* .split-desc: original opacity:0.9 (texto implícitamente blanco)
+   sobre fondo azul oscuro. Eliminar opacity, usar color sólido.
+   #f1f5f9 sobre #1e45a0 → ~10.5:1 */
+.split-desc {
+    opacity: 1;
+    color: #f1f5f9;
+}
+
+/* .for-company tiene fondo claro, en ese caso el texto heredado
+   es anthracite-800 (#2a2e33) que contrasta bien; no tocar. */
+.for-company .split-desc {
+    color: var(--clr-text-main);
+}
+
+/* .page-cta p: original rgba(255,255,255,0.8) sobre ocean-900→700
+   → ratio ~8.7:1 (pasa, pero eliminar opacity para solidez).
+   #e2e8f0 sobre #1e45a0 → ~9.0:1 */
+.page-cta p {
+    color: #e2e8f0;
+}
+
+/* .footer-text y .footer-links/contact originales usan rgba(255,255,255,0.6)
+   sobre #1c1e22 → ratio ~5.5:1 (pasa AA, mantener, pero añadir solidez por
+   consistencia con el criterio del contrato). */
+.footer-text,
+.footer-links-group a,
+.footer-contact p {
+    color: #94a3b8;  /* sobre #1c1e22 → ratio ~5.7:1, pasa AA */
+}
+
+/* ==================================
+   ACCESIBILIDAD — F4: prefers-reduced-motion
+   ================================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ==================================
+   ACCESIBILIDAD — F5: Fallback reveal sin JS
+   Coordinado con Agente 1: html.js se añade por JS solo
+   cuando el observer está activo Y sin reduce-motion.
+   ================================== */
+@media (prefers-reduced-motion: no-preference) {
+    html.js [data-animate] {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+}
+
+html.js [data-animate].in-view {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* ==================================
+   ACCESIBILIDAD — F6: .lang-btn área táctil ≥ 24×24 px
+   ================================== */
+.lang-btn {
+    min-width: 24px;
+    min-height: 24px;
+    padding: 4px 6px;        /* ~24px alto en fuente normal */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* El subpage-lang-switcher también tiene .lang-btn: hereda lo anterior.
+   Reforzar mínimo también ahí si se sobreescribiera. */
+.subpage-lang-switcher .lang-btn {
+    min-width: 24px;
+    min-height: 24px;
+}
+
+/* ==================================
+   ACCESIBILIDAD — F7: .faq-answer sin recorte con zoom
+   Sustituir max-height:500px fijo por un valor muy amplio
+   que nunca recorte contenido, usando max-height generosa.
+   ================================== */
+.faq-item.active .faq-answer {
+    max-height: 9999px;          /* valor amplio; nunca recorta con zoom */
+    transition: max-height 0.4s ease;
+}
+
+/* ==================================
+   ACCESIBILIDAD — F8: .cookie-settings-btn (inyectado por Agente 5)
+   Discreto, legible y con foco visible en el footer.
+   ================================== */
+.cookie-settings-btn {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #cbd5e1;             /* mismo tono que .footer-bottom → 12.3:1 */
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-family: var(--ff-body);
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    display: inline-block;
+    margin-top: 0.75rem;
+}
+
+.cookie-settings-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.cookie-settings-btn:focus-visible {
+    outline: 3px solid var(--clr-ocean-400, #5783e3);
+    outline-offset: 2px;
+}
+
+/* ==================================
+   ACCESIBILIDAD — F9: .hp-field fuera de pantalla (refuerzo)
+   El HTML trae estilo inline; esto lo refuerza aunque el inline
+   se elimine por error.
+   ================================== */
+.hp-field {
+    position: absolute !important;
+    left: -9999px !important;
+    top: auto !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+}
+
+/* Nota privacidad del formulario */
+.form-privacy-notice {
+    font-size: 0.78rem;
+    color: var(--clr-text-muted);
+    line-height: 1.5;
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+}

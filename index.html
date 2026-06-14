@@ -14,11 +14,6 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://fundaciontalentodivergente.org/">
 
-    <!-- Hreflang -->
-    <link rel="alternate" hreflang="es" href="https://fundaciontalentodivergente.org/">
-    <link rel="alternate" hreflang="en" href="https://fundaciontalentodivergente.org/?lang=en">
-    <link rel="alternate" hreflang="x-default" href="https://fundaciontalentodivergente.org/">
-
     <!-- Open Graph -->
     <meta property="og:title" content="Talento Divergente | Inclusión Laboral Neurodivergente">
     <meta property="og:description" content="Fundación dedicada a la inclusión laboral efectiva de personas neurodivergentes. Conectamos talento único con empresas innovadoras en la Comunitat Valenciana.">
@@ -26,7 +21,6 @@
     <meta property="og:url" content="https://fundaciontalentodivergente.org/">
     <meta property="og:site_name" content="Fundación Talento Divergente">
     <meta property="og:locale" content="es_ES">
-    <meta property="og:locale:alternate" content="en_US">
     <meta property="og:image" content="https://fundaciontalentodivergente.org/assets/logo.png">
 
     <!-- Twitter Card -->
@@ -83,11 +77,16 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 </head>
 <body>
+    <!-- G1: Skip link -->
+    <a href="#main" class="skip-link" data-i18n="skip_link">Saltar al contenido</a>
+
     <!-- Navbar -->
-    <nav class="navbar" id="navbar">
+    <!-- G8: aria-label en nav principal -->
+    <nav class="navbar" id="navbar" aria-label="Navegación principal">
         <div class="container nav-container">
             <a href="/" class="logo">
-                <img src="assets/logo.png" alt="Talento Divergente" class="logo-img">
+                <!-- G4: dimensiones logo -->
+                <img src="assets/logo.png" alt="Talento Divergente" class="logo-img" width="835" height="302">
             </a>
 
             <ul class="nav-links">
@@ -100,12 +99,14 @@
 
             <div class="nav-actions">
                 <div class="lang-switcher">
-                    <button class="lang-btn active" data-lang="es">ES</button>
+                    <!-- G7: aria-pressed en botones de idioma -->
+                    <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
                     <span class="lang-divider">|</span>
-                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
                 </div>
                 <a href="#contacto" class="btn btn-primary" data-i18n="nav_cta">Únete a Nosotros</a>
-                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú">
+                <!-- G6: aria-expanded + aria-controls en mobile toggle -->
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -125,12 +126,14 @@
             <li><a href="#contacto" class="btn btn-primary" data-i18n="nav_cta">Únete a Nosotros</a></li>
         </ul>
         <div class="mobile-lang-switcher">
-            <button class="lang-btn active" data-lang="es">Español</button>
-            <button class="lang-btn" data-lang="en">English</button>
+            <!-- G7: aria-pressed en botones de idioma (mobile) -->
+            <button class="lang-btn active" data-lang="es" aria-pressed="true">Español</button>
+            <button class="lang-btn" data-lang="en" aria-pressed="false">English</button>
         </div>
     </div>
 
     <!-- Hero Section -->
+    <!-- G1: id="main" + tabindex="-1" en el primer section tras el nav (index.html no tiene <main>) -->
     <header class="hero" id="inicio">
         <div class="hero-bg-shapes">
             <div class="shape shape-1"></div>
@@ -153,7 +156,8 @@
             <div class="hero-visual-wrapper">
                 <div class="connection-visual">
                     <div class="node-talent">
-                        <div class="node-icon">👨‍💻</div>
+                        <!-- G3: aria-hidden en elementos que solo contienen emoji -->
+                        <div class="node-icon" aria-hidden="true">👨‍💻</div>
                         <span data-i18n="node_talent">Talento</span>
                     </div>
                     <div class="connection-flow">
@@ -163,7 +167,8 @@
                         </div>
                     </div>
                     <div class="node-company">
-                        <div class="node-icon">🏢</div>
+                        <!-- G3: aria-hidden en elementos que solo contienen emoji -->
+                        <div class="node-icon" aria-hidden="true">🏢</div>
                         <span data-i18n="node_company">Empresa</span>
                     </div>
                 </div>
@@ -171,6 +176,9 @@
 
         </div>
     </header>
+
+    <!-- G1: main con id y tabindex para el skip link -->
+    <main id="main" tabindex="-1">
 
     <!-- Neurodiversity Section -->
     <section class="neuro-section section" id="neurodiversidad">
@@ -200,15 +208,18 @@
                     </p>
                     <div class="mission-icons">
                         <div class="mission-item">
-                            <span class="m-icon">🤝</span>
+                            <!-- G3: aria-hidden en elementos que solo contienen emoji -->
+                            <span class="m-icon" aria-hidden="true">🤝</span>
                             <span class="m-text" data-i18n="about_stat_1">Alianzas de Valor</span>
                         </div>
                         <div class="mission-item">
-                            <span class="m-icon">🌱</span>
+                            <!-- G3: aria-hidden en elementos que solo contienen emoji -->
+                            <span class="m-icon" aria-hidden="true">🌱</span>
                             <span class="m-text" data-i18n="about_stat_2">Crecimiento Acompañado</span>
                         </div>
                         <div class="mission-item">
-                            <span class="m-icon">🌍</span>
+                            <!-- G3: aria-hidden en elementos que solo contienen emoji -->
+                            <span class="m-icon" aria-hidden="true">🌍</span>
                             <span class="m-text" data-i18n="about_stat_3">Legado Humano</span>
                         </div>
                     </div>
@@ -281,14 +292,16 @@
     <section class="dual-target section" id="empresas">
         <div class="container dual-target-container">
             <div class="split-content for-talent">
-                <div class="split-icon">👨‍💻</div>
+                <!-- G3: aria-hidden en split-icon que solo contiene emoji -->
+                <div class="split-icon" aria-hidden="true">👨‍💻</div>
                 <h2 class="split-title" data-i18n="dual_talent_title">Para el Talento</h2>
                 <p class="split-desc" data-i18n="dual_talent_desc">Encontramos empresas que valoran tu forma única de ver el mundo. Te preparamos y acompañamos en todo el proceso.</p>
                 <a href="#contacto" class="btn btn-outline-light" data-i18n="dual_talent_btn">Busco Empleo</a>
             </div>
 
             <div class="split-content for-company">
-                <div class="split-icon">🏢</div>
+                <!-- G3: aria-hidden en split-icon que solo contiene emoji -->
+                <div class="split-icon" aria-hidden="true">🏢</div>
                 <h2 class="split-title" data-i18n="dual_company_title">Para Empresas</h2>
                 <p class="split-desc" data-i18n="dual_company_desc">La neurodiversidad aporta enfoque, atención al detalle e innovación. Potencia tu equipo con talento divergente.</p>
                 <a href="#contacto" class="btn btn-primary" data-i18n="dual_company_btn">Contratar Talento</a>
@@ -339,19 +352,24 @@
                 <!-- Contact Form -->
                 <div class="contact-form-wrapper">
                     <form id="contact-form" class="contact-form">
+                        <!-- D.3: Honeypot oculto -->
+                        <div class="hp-field" aria-hidden="true" style="position:absolute;left:-9999px;"><label>No rellenar<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="contact-name" data-i18n="contact_form_name">Nombre</label>
-                                <input type="text" id="contact-name" name="name" placeholder="Nombre" required>
+                                <!-- D.3: aria-required en campos required -->
+                                <input type="text" id="contact-name" name="name" placeholder="Nombre" required aria-required="true">
                             </div>
                             <div class="form-group">
                                 <label for="contact-email" data-i18n="contact_form_email">Email</label>
-                                <input type="email" id="contact-email" name="email" placeholder="Email" required>
+                                <!-- D.3: aria-required en campos required -->
+                                <input type="email" id="contact-email" name="email" placeholder="Email" required aria-required="true">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="contact-subject" data-i18n="contact_form_subject">Asunto</label>
-                            <select id="contact-subject" name="subject" required>
+                            <!-- D.3: aria-required en campos required -->
+                            <select id="contact-subject" name="subject" required aria-required="true">
                                 <option value="Solicitar información" data-i18n="contact_form_subject_info">Solicitar información</option>
                                 <option value="Busco empleo" data-i18n="contact_form_subject_talent">Busco empleo</option>
                                 <option value="Propuesta de colaboración" data-i18n="contact_form_subject_collab">Propuesta de colaboración</option>
@@ -360,27 +378,36 @@
                         </div>
                         <div class="form-group">
                             <label for="contact-message" data-i18n="contact_form_message">Mensaje</label>
-                            <textarea id="contact-message" name="message" rows="5" placeholder="Mensaje" required></textarea>
+                            <!-- D.3: aria-required en campos required -->
+                            <textarea id="contact-message" name="message" rows="5" placeholder="Mensaje" required aria-required="true"></textarea>
                         </div>
                         <div class="form-group form-privacy">
                             <label class="checkbox-label">
-                                <input type="checkbox" name="privacy" required>
+                                <!-- D.3: aria-required en campos required -->
+                                <input type="checkbox" name="privacy" required aria-required="true">
+                                <!-- D.3: verificado que el enlace usa /politica-privacidad sin .html -->
                                 <span class="privacy-label" data-i18n="contact_form_privacy">He leído y acepto la <a href="/politica-privacidad">Política de Privacidad</a></span>
                             </label>
                         </div>
+                        <!-- D.3: Nota de primera capa de privacidad -->
+                        <p class="form-privacy-notice" data-i18n="form_privacy_notice">Responsable: Fundación de la Comunitat Valenciana Talento Divergente. Finalidad: atender tu consulta. Legitimación: tu consentimiento. No se ceden datos salvo obligación legal; se usan encargados (Google) con transferencia a EE.UU. amparada en el EU-US Data Privacy Framework. Derechos: acceso, rectificación, supresión y otros, escribiendo a contacto@fundaciontalentodivergente.org. Más información en la <a href="/politica-privacidad">Política de Privacidad</a>.</p>
                         <button type="submit" class="btn btn-primary" data-i18n="contact_form_submit">Enviar mensaje</button>
-                        <div id="form-status" class="form-status"></div>
+                        <!-- D.3: role="status" aria-live="polite" en form-status -->
+                        <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
+    </main>
+
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-brand">
                 <a href="/" class="logo footer-logo">
-                    <img src="assets/logo.png" alt="Talento Divergente" class="logo-img">
+                    <!-- G4: dimensiones logo en footer -->
+                    <img src="assets/logo.png" alt="Talento Divergente" class="logo-img" width="835" height="302">
                 </a>
                 <p class="footer-text" data-i18n="footer_desc">
                     Construyendo puentes entre el talento neurodivergente y empresas preparadas para el futuro.
@@ -411,7 +438,8 @@
                 <p>contacto@fundaciontalentodivergente.org</p>
                 <p>Moncofa, Castellón</p>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/company/fundaci%C3%B3n-talento-divergente/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+                    <!-- G5: SVG LinkedIn accesible -->
+                    <a href="https://www.linkedin.com/company/fundaci%C3%B3n-talento-divergente/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 9.5H5.67V18h2.67V9.5zM7 6a1.55 1.55 0 1 0 0 3.1A1.55 1.55 0 0 0 7 6zm11 5.86c0-2.5-1.6-3.36-3-3.36a2.8 2.8 0 0 0-2.34 1.18V9.5h-2.67V18h2.67v-4.5c0-1.07.46-1.7 1.4-1.7s1.27.64 1.27 1.7V18H18v-6.14z"/></svg></a>
                 </div>
             </div>
         </div>

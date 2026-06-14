@@ -10,11 +10,6 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://fundaciontalentodivergente.org/quienes-somos">
 
-    <!-- Hreflang -->
-    <link rel="alternate" hreflang="es" href="https://fundaciontalentodivergente.org/quienes-somos">
-    <link rel="alternate" hreflang="en" href="https://fundaciontalentodivergente.org/quienes-somos?lang=en">
-    <link rel="alternate" hreflang="x-default" href="https://fundaciontalentodivergente.org/quienes-somos">
-
     <!-- Open Graph -->
     <meta property="og:title" content="Quiénes Somos | Talento Divergente">
     <meta property="og:description" content="Conoce la misión, valores y equipo de la Fundación Talento Divergente. Posicionamos la neurodiversidad como ventaja competitiva empresarial.">
@@ -22,7 +17,6 @@
     <meta property="og:url" content="https://fundaciontalentodivergente.org/quienes-somos">
     <meta property="og:site_name" content="Fundación Talento Divergente">
     <meta property="og:locale" content="es_ES">
-    <meta property="og:locale:alternate" content="en_US">
     <meta property="og:image" content="https://fundaciontalentodivergente.org/assets/logo.png">
 
     <!-- Twitter Card -->
@@ -72,11 +66,16 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 </head>
 <body>
+    <!-- G1: Skip link -->
+    <a href="#main" class="skip-link" data-i18n="skip_link">Saltar al contenido</a>
+
     <!-- Navbar -->
-    <nav class="navbar" id="navbar">
+    <!-- G8: aria-label en nav principal -->
+    <nav class="navbar" id="navbar" aria-label="Navegación principal">
         <div class="container nav-container">
             <a href="/" class="logo">
-                <img src="assets/logo.png" alt="Talento Divergente" class="logo-img">
+                <!-- G4: dimensiones logo -->
+                <img src="assets/logo.png" alt="Talento Divergente" class="logo-img" width="835" height="302">
             </a>
 
             <ul class="nav-links">
@@ -89,12 +88,14 @@
 
             <div class="nav-actions">
                 <div class="lang-switcher">
-                    <button class="lang-btn active" data-lang="es">ES</button>
+                    <!-- G7: aria-pressed en botones de idioma -->
+                    <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
                     <span class="lang-divider">|</span>
-                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
                 </div>
                 <a href="/#contacto" class="btn btn-primary" data-i18n="nav_cta">Únete a Nosotros</a>
-                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú">
+                <!-- G6: aria-expanded + aria-controls en mobile toggle -->
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -114,8 +115,9 @@
             <li><a href="/#contacto" class="btn btn-primary" data-i18n="nav_cta">Únete a Nosotros</a></li>
         </ul>
         <div class="mobile-lang-switcher">
-            <button class="lang-btn active" data-lang="es">Español</button>
-            <button class="lang-btn" data-lang="en">English</button>
+            <!-- G7: aria-pressed en botones de idioma (mobile) -->
+            <button class="lang-btn active" data-lang="es" aria-pressed="true">Español</button>
+            <button class="lang-btn" data-lang="en" aria-pressed="false">English</button>
         </div>
     </div>
 
@@ -123,7 +125,8 @@
     <header class="page-hero">
         <div class="container">
             <h1 data-i18n="page_about_heading">Quiénes Somos: Inclusión Laboral Neurodivergente</h1>
-            <nav class="breadcrumbs">
+            <!-- G8: aria-label en nav de breadcrumbs -->
+            <nav class="breadcrumbs" aria-label="Migas de pan">
                 <a href="/" data-i18n="breadcrumb_home">Inicio</a>
                 <span>/</span>
                 <span data-i18n="breadcrumb_about">Quiénes Somos</span>
@@ -132,7 +135,8 @@
     </header>
 
     <!-- Content -->
-    <main class="content-body">
+    <!-- G1: id="main" + tabindex="-1" en <main> -->
+    <main class="content-body" id="main" tabindex="-1">
         <!-- Mission -->
         <section class="content-section section">
             <div class="container container-narrow">
@@ -189,7 +193,8 @@
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-icon">
-                            <span class="emoji-icon">🎯</span>
+                            <!-- G3: aria-hidden en span que solo contiene emoji -->
+                            <span class="emoji-icon" aria-hidden="true">🎯</span>
                         </div>
                         <h3 class="service-title" data-i18n="about_value1_title">Inclusión Real</h3>
                         <p class="service-description" data-i18n="about_value1_desc">
@@ -198,7 +203,8 @@
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
-                            <span class="emoji-icon">🔬</span>
+                            <!-- G3: aria-hidden en span que solo contiene emoji -->
+                            <span class="emoji-icon" aria-hidden="true">🔬</span>
                         </div>
                         <h3 class="service-title" data-i18n="about_value2_title">Base Científica</h3>
                         <p class="service-description" data-i18n="about_value2_desc">
@@ -207,7 +213,8 @@
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
-                            <span class="emoji-icon">💼</span>
+                            <!-- G3: aria-hidden en span que solo contiene emoji -->
+                            <span class="emoji-icon" aria-hidden="true">💼</span>
                         </div>
                         <h3 class="service-title" data-i18n="about_value3_title">Enfoque Empresarial</h3>
                         <p class="service-description" data-i18n="about_value3_desc">
@@ -237,7 +244,8 @@
         <div class="container footer-container">
             <div class="footer-brand">
                 <a href="/" class="logo footer-logo">
-                    <img src="assets/logo.png" alt="Talento Divergente" class="logo-img">
+                    <!-- G4: dimensiones logo en footer -->
+                    <img src="assets/logo.png" alt="Talento Divergente" class="logo-img" width="835" height="302">
                 </a>
                 <p class="footer-text" data-i18n="footer_desc">
                     Construyendo puentes entre el talento neurodivergente y empresas preparadas para el futuro.
@@ -264,7 +272,8 @@
                 <h4 class="footer-heading" data-i18n="footer_contact_title">Contacto</h4>
                 <p>contacto@fundaciontalentodivergente.org</p>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/company/fundaci%C3%B3n-talento-divergente/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+                    <!-- G5: SVG LinkedIn accesible -->
+                    <a href="https://www.linkedin.com/company/fundaci%C3%B3n-talento-divergente/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 9.5H5.67V18h2.67V9.5zM7 6a1.55 1.55 0 1 0 0 3.1A1.55 1.55 0 0 0 7 6zm11 5.86c0-2.5-1.6-3.36-3-3.36a2.8 2.8 0 0 0-2.34 1.18V9.5h-2.67V18h2.67v-4.5c0-1.07.46-1.7 1.4-1.7s1.27.64 1.27 1.7V18H18v-6.14z"/></svg></a>
                 </div>
             </div>
         </div>
